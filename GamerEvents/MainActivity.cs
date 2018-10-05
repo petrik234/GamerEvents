@@ -4,7 +4,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Support.V7.App;
 using Android.Widget;
-
+using Android.Gms.Common.Apis;
 using System;
 using System.Net;
 using System.Collections.Specialized;
@@ -15,6 +15,8 @@ namespace GamerEvents
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private GoogleApiClient GoogleApiClient;
+
         private EditText etEmail;
         private EditText etPass;
         private Button btnOK;
