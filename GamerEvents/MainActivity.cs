@@ -40,7 +40,7 @@ namespace GamerEvents
         private void BtnOK_Click(object sender, EventArgs e)
         {
             WebClient wc = new WebClient();
-            Uri uri = new Uri(@"http://pte-ttk.wscdev.hu/team4/insert.php");
+            Uri uri = new Uri(@"https://pte-ttk.wscdev.hu/team4/insert.php");
             NameValueCollection parameters = new NameValueCollection();
 
             parameters.Add("email",etEmail.Text);
@@ -48,9 +48,6 @@ namespace GamerEvents
 
             wc.UploadValuesCompleted += Wc_UploadValuesCompleted;
             wc.UploadValuesAsync(uri,parameters);
-
-
-
         }
 
         private void Wc_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
