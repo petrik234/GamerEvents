@@ -21,6 +21,7 @@
         <category android:name="mono.android.intent.category.SEPPUKU.GamerEvents.GamerEvents" />
       </intent-filter>
     </receiver>
+    <activity android:name="com.cloudrail.si.servicecode.commands.codeRedirect.AuthenticationActivity" />
     <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:exported="false" />
   </application>
 </manifest>

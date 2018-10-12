@@ -178,6 +178,9 @@ android.gms.common.apis.ResultCallback_1;md513d0258903c37fed2a3d17a14e8551a2.Res
 Android.Gms.Common.Apis.AwaitableResultCallback`1, Xamarin.GooglePlayServices.Basement;md513d0258903c37fed2a3d17a14e8551a2.AwaitableResultCallback_1
 Android.Gms.Common.Apis.AwaitableResultCallback`1;md513d0258903c37fed2a3d17a14e8551a2.AwaitableResultCallback_1
 android.gms.common.apis.AwaitableResultCallback_1;md513d0258903c37fed2a3d17a14e8551a2.AwaitableResultCallback_1
+Android.Gms.Plus.PlusOneButton+IOnPlusOneClickListenerImplementor, Xamarin.GooglePlayServices.Plus;mono.com.google.android.gms.plus.PlusOneButton_OnPlusOneClickListenerImplementor
+Android.Gms.Plus.PlusOneButton.IOnPlusOneClickListenerImplementor;mono.com.google.android.gms.plus.PlusOneButton_OnPlusOneClickListenerImplementor
+mono.com.google.android.gms.plus.PlusOneButton_OnPlusOneClickListenerImplementor;mono.com.google.android.gms.plus.PlusOneButton_OnPlusOneClickListenerImplementor
 Android.Gms.Tasks.IOnCompleteListenerImplementor, Xamarin.GooglePlayServices.Tasks;mono.com.google.android.gms.tasks.OnCompleteListenerImplementor
 Android.Gms.Tasks.IOnCompleteListenerImplementor;mono.com.google.android.gms.tasks.OnCompleteListenerImplementor
 mono.com.google.android.gms.tasks.OnCompleteListenerImplementor;mono.com.google.android.gms.tasks.OnCompleteListenerImplementor

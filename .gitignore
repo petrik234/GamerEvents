@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+.vs/GamerEvents/v15/.suo
+.vs/GamerEvents/v15/.suo

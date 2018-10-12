@@ -98,10 +98,25 @@
     <PackageReference Include="Google.Apis.Auth">
       <Version>1.35.2</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Google.Plus.Api.Android">
+      <Version>1.2.12</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Base">
       <Version>60.1142.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Plus">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GamerEvents.Model\GamerEvents.Model.csproj">
+      <Project>{c6c5818a-216a-422e-bd5c-6786a8384c50}</Project>
+      <Name>GamerEvents.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

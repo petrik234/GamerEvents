@@ -2988,13 +2988,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f02007f;
-        public static final int avd_hide_password_2=0x7f020080;
-        public static final int avd_hide_password_3=0x7f020081;
+        public static final int avd_hide_password_1=0x7f020083;
+        public static final int avd_hide_password_2=0x7f020084;
+        public static final int avd_hide_password_3=0x7f020085;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f020082;
-        public static final int avd_show_password_2=0x7f020083;
-        public static final int avd_show_password_3=0x7f020084;
+        public static final int avd_show_password_1=0x7f020086;
+        public static final int avd_show_password_2=0x7f020087;
+        public static final int avd_show_password_3=0x7f020088;
         public static final int common_full_open_on_phone=0x7f020055;
         public static final int common_google_signin_btn_icon_dark=0x7f020056;
         public static final int common_google_signin_btn_icon_dark_focused=0x7f020057;
@@ -3022,21 +3022,25 @@ containing a value of this type.
         public static final int design_snackbar_background=0x7f02006d;
         public static final int googleg_disabled_color_18=0x7f02006e;
         public static final int googleg_standard_color_18=0x7f02006f;
-        public static final int navigation_empty_icon=0x7f020070;
-        public static final int notification_action_background=0x7f020071;
-        public static final int notification_bg=0x7f020072;
-        public static final int notification_bg_low=0x7f020073;
-        public static final int notification_bg_low_normal=0x7f020074;
-        public static final int notification_bg_low_pressed=0x7f020075;
-        public static final int notification_bg_normal=0x7f020076;
-        public static final int notification_bg_normal_pressed=0x7f020077;
-        public static final int notification_icon_background=0x7f020078;
-        public static final int notification_template_icon_bg=0x7f02007d;
-        public static final int notification_template_icon_low_bg=0x7f02007e;
-        public static final int notification_tile_bg=0x7f020079;
-        public static final int notify_panel_notification_icon_bg=0x7f02007a;
-        public static final int tooltip_frame_dark=0x7f02007b;
-        public static final int tooltip_frame_light=0x7f02007c;
+        public static final int ic_plusone_medium_off_client=0x7f020070;
+        public static final int ic_plusone_small_off_client=0x7f020071;
+        public static final int ic_plusone_standard_off_client=0x7f020072;
+        public static final int ic_plusone_tall_off_client=0x7f020073;
+        public static final int navigation_empty_icon=0x7f020074;
+        public static final int notification_action_background=0x7f020075;
+        public static final int notification_bg=0x7f020076;
+        public static final int notification_bg_low=0x7f020077;
+        public static final int notification_bg_low_normal=0x7f020078;
+        public static final int notification_bg_low_pressed=0x7f020079;
+        public static final int notification_bg_normal=0x7f02007a;
+        public static final int notification_bg_normal_pressed=0x7f02007b;
+        public static final int notification_icon_background=0x7f02007c;
+        public static final int notification_template_icon_bg=0x7f020081;
+        public static final int notification_template_icon_low_bg=0x7f020082;
+        public static final int notification_tile_bg=0x7f02007d;
+        public static final int notify_panel_notification_icon_bg=0x7f02007e;
+        public static final int tooltip_frame_dark=0x7f02007f;
+        public static final int tooltip_frame_light=0x7f020080;
     }
     public static final class id {
         public static final int ALT=0x7f0b003a;
@@ -3078,6 +3082,7 @@ containing a value of this type.
         public static final int beginning=0x7f0b0037;
         public static final int blocking=0x7f0b005e;
         public static final int bottom=0x7f0b0045;
+        public static final int button1=0x7f0b00b8;
         public static final int buttonOk=0x7f0b0095;
         public static final int buttonPanel=0x7f0b006a;
         public static final int cancel_action=0x7f0b00a9;
@@ -3134,9 +3139,9 @@ containing a value of this type.
         public static final int line3=0x7f0b0018;
         public static final int listMode=0x7f0b0026;
         public static final int list_item=0x7f0b0068;
-        public static final int masked=0x7f0b00ba;
+        public static final int masked=0x7f0b00bb;
         public static final int media_actions=0x7f0b00ab;
-        public static final int message=0x7f0b00b8;
+        public static final int message=0x7f0b00b9;
         public static final int middle=0x7f0b0039;
         public static final int mini=0x7f0b005a;
         public static final int multiply=0x7f0b0030;
@@ -3222,7 +3227,7 @@ containing a value of this type.
         public static final int up=0x7f0b0009;
         public static final int useLogo=0x7f0b002e;
         public static final int view_offset_helper=0x7f0b0016;
-        public static final int visible=0x7f0b00b9;
+        public static final int visible=0x7f0b00ba;
         public static final int wide=0x7f0b0022;
         public static final int withText=0x7f0b0044;
         public static final int wrap_content=0x7f0b0036;
@@ -3301,7 +3306,8 @@ containing a value of this type.
         public static final int select_dialog_multichoice_material=0x7f040039;
         public static final int select_dialog_singlechoice_material=0x7f04003a;
         public static final int support_simple_spinner_dropdown_item=0x7f04003b;
-        public static final int tooltip=0x7f04003c;
+        public static final int test=0x7f04003c;
+        public static final int tooltip=0x7f04003d;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

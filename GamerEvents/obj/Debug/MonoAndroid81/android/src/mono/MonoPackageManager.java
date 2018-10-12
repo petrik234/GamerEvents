@@ -107,6 +107,8 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "GamerEvents.dll" comes first in this list. */
 		"GamerEvents.dll",
+		"cloudrail-si-xamarin-android-sdk.dll",
+		"GamerEvents.Model.dll",
 		"Google.Apis.Auth.dll",
 		"Google.Apis.Auth.PlatformServices.dll",
 		"Google.Apis.Core.dll",
@@ -129,6 +131,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.GooglePlayServices.Base.dll",
 		"Xamarin.GooglePlayServices.Basement.dll",
+		"Xamarin.GooglePlayServices.Plus.dll",
 		"Xamarin.GooglePlayServices.Tasks.dll",
 	};
 	public static final String[] Dependencies = new String[]{
