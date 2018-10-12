@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tableLayout2">
+		<TableRow
+			android:id="@+id/tableRow2">
+			<Button
+				android:text="Létrehozás"
+				android:background="@color/abc_search_url_text_normal"
+				android:id="@+id/button4"
+				android:layout_column="0"
+				android:paddingHorizontal="20"
+				android:paddingVertical="30" />
+			<ImageButton
+				android:src="@android:drawable/ic_menu_gallery"
+				android:id="@+id/imageButton1"
+				android:layout_column="0"
+				android:layout_width="255.5dp" />
+		</TableRow>
+	</TableLayout>
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText1"
+		android:text="Játék neve"
+		android:paddingHorizontal="50"
+		android:paddingVertical="15" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText2"
+		android:text="Időpont"
+		android:paddingHorizontal="50"
+		android:paddingVertical="15" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText3"
+		android:paddingHorizontal="50"
+		android:paddingVertical="15"
+		android:text="Helyszín" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText4"
+		android:text="Téma"
+		android:paddingHorizontal="50"
+		android:paddingVertical="15" />
+
+		<android.support.design.widget.TextInputEditText
+		android:layout_width="382.5dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/textInputEditText5"
+		android:paddingHorizontal="50"
+		android:paddingVertical="15"
+		android:text="Leírás" />
+
+
+		
+
+
+
+
+
+	
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tableLayout2">
+		<TableRow
+			android:id="@+id/tableRow2">
+
+		<TextView
+			android:text="Létszám limit: "
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView1"
+			android:layout_column="0"
+			android:textSize="20"
+			android:padding="5" />
+		<EditText
+			android:inputType="number"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/editText1"
+			android:layout_column="1"/>
+
+		</TableRow>
+	</TableLayout>
+
+
+
+
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:padding="30px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tableLayout1">
+		<TableRow
+			android:id="@+id/tableRow1">
+			<Button
+				android:text="Gomb"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/button4"
+				android:layout_column="0" />
+			<Button
+				android:text="Gomb"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/button3"
+				android:layout_column="1" />
+			<Button
+				android:text="Gomb"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/button2"
+				android:layout_column="2" />
+			<Button
+				android:text="Gomb"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/button1"
+				android:layout_column="3" />
+		</TableRow>
+	</TableLayout>
+
+	
+
+
+
+
+	
+
+
+
+
+</LinearLayout>
