@@ -108,9 +108,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "GamerEvents.dll" comes first in this list. */
 		"GamerEvents.dll",
 		"cloudrail-si-xamarin-android-sdk.dll",
-		"GamerEvents.Model.dll",
-		"Google.Apis.Auth.dll",
-		"Google.Apis.Auth.PlatformServices.dll",
+		"GamerEvents.DBModel.dll",
 		"Google.Apis.Core.dll",
 		"Google.Apis.dll",
 		"Newtonsoft.Json.dll",

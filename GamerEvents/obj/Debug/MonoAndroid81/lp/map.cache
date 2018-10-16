@@ -1,7 +1,5 @@
 cloudrail-si-xamarin-android-sdk
-GamerEvents.Model
-Google.Apis.Auth
-Google.Apis.Auth.PlatformServices
+GamerEvents.DBModel
 Google.Apis.Core
 Google.Apis
 Newtonsoft.Json

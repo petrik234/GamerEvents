@@ -4,7 +4,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Support.V7.App;
 using Android.Widget;
-
 using System;
 using System.Net;
 using System.Collections.Specialized;
@@ -13,18 +12,19 @@ using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using System.IO;
-using GamerEvents.Model;
+using GamerEvents.DBModel;
 using Android.Gms.Common.Apis;
 using Android.Gms.Common;
 using Android.Gms;
 using Android.Gms.Plus;
 using Android.Gms.Plus.Model.People;
 using Android.Content;
+using System.Security.Cryptography;
 
 namespace GamerEvents
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
+    public class Login : AppCompatActivity, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
     {
         private GoogleApiClient googleApiClient;
         private EditText etEmail;
@@ -41,8 +41,8 @@ namespace GamerEvents
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+
+            SetContentView(Resource.Layout.login);
             
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
             builder.AddConnectionCallbacks(this);
@@ -56,7 +56,7 @@ namespace GamerEvents
             etEmail = FindViewById<EditText>(Resource.Id.TextEmail);
             etPass = FindViewById<EditText>(Resource.Id.TextPass);
             btnOK = FindViewById<Button>(Resource.Id.buttonOk);
-            
+
 
             btnOK.Click += BtnOK_Click;
 
@@ -68,42 +68,50 @@ namespace GamerEvents
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
+            if (etEmail.Text == string.Empty || etPass.Text == string.Empty)
+            {
+                //hibakezelés
+                return;
+            }
 
-            User user = new User
+            User formUser = new User
             {
                 email = etEmail.Text,
                 password = etPass.Text
             };
+                       
+            User userResult = User.GetUserByEmail(formUser.email);
+            if (userResult.email != null)
+            {
+                byte[] encodedPassword = new UTF8Encoding().GetBytes(etPass.Text);
 
-            //search for existed email/pass
+                byte[] hash = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(encodedPassword);
 
-            string url = "https://pte-ttk.wscdev.hu/team4/user/read_one.php?email=" + user.email;
+                string encoded = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
 
-
-            WebClient client = new WebClient();
-            client.Headers.Add("Content-Type", "application/json");
-            string reply = client.UploadString(url, "");
-
-            User userResult = JsonConvert.DeserializeObject<User>(reply);
-
-
-            /*
-            //beszúrás
-            string jsonString = JsonConvert.SerializeObject(user);
-            url = "https://pte-ttk.wscdev.hu/team4/user/create.php";
-          
-
-            WebClient client = new WebClient();
-            client.Headers.Add("Content-Type", "application/json");
-            string reply = client.UploadString(url, jsonString);
-
-            bool messageResult = JsonConvert.DeserializeObject<bool>(reply);
-
-            btnOK.Text = messageResult.ToString();
-
-            */
+                if (userResult.password == encoded )
+                {
+                    //bejelentkezett
+                    GoToMainPage();
+                }
+                else
+                {
+                    //sikertelen bejelentkezés
+                }
+            }
+            else
+            {
+                if (User.CreateNewUser(formUser))
+                {
+                    //regisztrált
+                    GoToMainPage();
+                }
+                else
+                {
+                    //sikertelen regisztráció
+                }
+           }
         }
-
 
         private void BtnGoogleSignIn_Click(object sender, EventArgs e)
         {
@@ -161,7 +169,9 @@ namespace GamerEvents
             if (PlusClass.PeopleApi.GetCurrentPerson(googleApiClient) != null)
             {
                 IPerson plusUser = PlusClass.PeopleApi.GetCurrentPerson(googleApiClient);
-               
+                //plus user regisztrálás
+
+                
 
                
                 infoPopulated = true;
@@ -203,13 +213,20 @@ namespace GamerEvents
                     intentInProgress = true;
                     StartIntentSenderForResult(connectionResult.Resolution.IntentSender, 0, null, 0, 0, 0);
                 }
-                catch (Android.Content.IntentSender.SendIntentException e)
+                catch
                 {
                     intentInProgress = false;
                     googleApiClient.Connect();
 
                 }
             }
-        }    
+        }
+        
+        private void GoToMainPage()
+        {
+            Intent intent = new Intent(this, typeof(DetailsEvent));
+            this.StartActivity(intent);
+            this.Finish();
+        }
     }
 }

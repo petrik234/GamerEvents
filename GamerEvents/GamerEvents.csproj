@@ -35,6 +35,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -56,7 +59,12 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="CreateEvent.cs" />
+    <Compile Include="DetailsEvent.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +74,7 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.axml">
+    <AndroidResource Include="Resources\layout\login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
@@ -95,9 +103,6 @@
     <PackageReference Include="Google.Apis">
       <Version>1.35.2</Version>
     </PackageReference>
-    <PackageReference Include="Google.Apis.Auth">
-      <Version>1.35.2</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
@@ -113,10 +118,29 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GamerEvents.Model\GamerEvents.Model.csproj">
+    <ProjectReference Include="..\GamerEvents.Model\GamerEvents.DbModel.csproj">
       <Project>{c6c5818a-216a-422e-bd5c-6786a8384c50}</Project>
-      <Name>GamerEvents.Model</Name>
+      <Name>GamerEvents.DbModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\createEvent.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\detailsEvent.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\profile.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\map.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

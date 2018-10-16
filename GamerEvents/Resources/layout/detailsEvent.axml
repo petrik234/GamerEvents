@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+	
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
+
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -19,8 +21,8 @@
 				android:background="@color/abc_search_url_text_normal"
 				android:id="@+id/button4"
 				android:layout_column="0"
-				android:paddingHorizontal="20"
-				android:paddingVertical="30" />
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="30dp" />
 			
 			<ImageButton
 				android:src="@android:drawable/ic_menu_gallery"
@@ -37,56 +39,55 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView1"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8" />
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp" />
 	<TextView
 		android:text="Időpont"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView2"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8"/>
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp"/>
 	<TextView
 		android:text="Helyszín"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView3"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8"/>
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp"/>
 	<TextView
 		android:text="Téma"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView4"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8"/>
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp"/>
 	<TextView
 		android:text="Leírás"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView5"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8"/>
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp"/>
 	<TextView
 		android:text="Létszám limit "
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView6"
-		android:textSize="20"
-		android:paddingHorizontal="50"
-		android:paddingVertical="8"/>
+		android:textSize="20sp"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="8dp"/>
 	<ListView
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="114.5dp"
-		android:id="@+id/listView1"
-		
+		android:id="@+id/listView1"		
 	/>
 	<TableLayout
 		android:minWidth="25px"
@@ -96,27 +97,23 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/tableLayout1">
 		<TableRow
-			android:id="@+id/tableRow1">
+			android:id="@+id/tableRow4"
+			android:gravity="center">
 			<Button
-				android:text="Gomb"
+				android:text="Main"
 				android:background="@android:color/holo_red_dark"
-				android:id="@+id/button4"
+				android:id="@+id/btnMain"
 				android:layout_column="0" />
 			<Button
-				android:text="Gomb"
+				android:text="Map"
 				android:background="@android:color/holo_red_dark"
-				android:id="@+id/button3"
+				android:id="@+id/btnMap"
 				android:layout_column="1" />
 			<Button
-				android:text="Gomb"
+				android:text="Profile"
 				android:background="@android:color/holo_red_dark"
-				android:id="@+id/button2"
-				android:layout_column="2" />
-			<Button
-				android:text="Gomb"
-				android:background="@android:color/holo_red_dark"
-				android:id="@+id/button1"
-				android:layout_column="3" />
+				android:id="@+id/btnProfile"
+				android:layout_column="2" />			
 		</TableRow>
 	</TableLayout>
 

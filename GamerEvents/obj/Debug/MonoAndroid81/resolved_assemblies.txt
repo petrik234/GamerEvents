@@ -1,8 +1,6 @@
 D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\GamerEvents.dll
 D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\cloudrail-si-xamarin-android-sdk.dll
-D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\GamerEvents.Model.dll
-D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\Google.Apis.Auth.dll
-D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\Google.Apis.Auth.PlatformServices.dll
+D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\GamerEvents.DBModel.dll
 D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\Google.Apis.Core.dll
 D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\Google.Apis.dll
 D:\Programozás\GamerEvents\GamerEvents\obj\Debug\MonoAndroid81\android\assets\Java.Interop.dll

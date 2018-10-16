@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<TextView
+		android:text="Main"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" />
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:padding="30px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tableLayout1">
+		<TableRow
+			android:id="@+id/tableRow1"
+			android:gravity="center">
+			<Button
+				android:text="Main"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/btnMain"
+				android:layout_column="0" />
+			<Button
+				android:text="Map"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/btnMap"
+				android:layout_column="1" />
+			<Button
+				android:text="Profile"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/btnProfile"
+				android:layout_column="2" />			
+		</TableRow>
+	</TableLayout>
+</LinearLayout>

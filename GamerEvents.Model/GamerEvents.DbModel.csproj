@@ -7,8 +7,8 @@
     <ProjectGuid>{C6C5818A-216A-422E-BD5C-6786A8384C50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GamerEvents.Model</RootNamespace>
-    <AssemblyName>GamerEvents.Model</AssemblyName>
+    <RootNamespace>GamerEvents.DBModel</RootNamespace>
+    <AssemblyName>GamerEvents.DBModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
