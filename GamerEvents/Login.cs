@@ -56,11 +56,10 @@ namespace GamerEvents
             etEmail = FindViewById<EditText>(Resource.Id.TextEmail);
             etPass = FindViewById<EditText>(Resource.Id.TextPass);
             btnOK = FindViewById<Button>(Resource.Id.buttonOk);
+            btnGoogleSignIn = FindViewById<SignInButton>(Resource.Id.sign_in_button);
 
 
             btnOK.Click += BtnOK_Click;
-
-            btnGoogleSignIn = FindViewById<SignInButton>(Resource.Id.sign_in_button);
             btnGoogleSignIn.Click += BtnGoogleSignIn_Click;
 
 
@@ -92,11 +91,11 @@ namespace GamerEvents
                 if (userResult.password == encoded )
                 {
                     //bejelentkezett
-                    GoToMainPage();
+                    GoToMainPage(userResult.userid);
                 }
                 else
                 {
-                    //sikertelen bejelentkezés
+                    //sikertelen bejelentkezéss
                 }
             }
             else
@@ -104,13 +103,27 @@ namespace GamerEvents
                 if (User.CreateNewUser(formUser))
                 {
                     //regisztrált
-                    GoToMainPage();
+                    //lekérjük az idjét
+                    User loggedUser = User.GetUserByEmail(formUser.email);
+                    GoToMainPage(loggedUser.userid);
                 }
                 else
                 {
                     //sikertelen regisztráció
                 }
            }
+        }
+
+        private void GoToMainPage(int userId)
+        {
+            SettingsManager sm = new SettingsManager();
+            sm.WriteLocalFile("userájdi", userId.ToString());
+
+            //string asd = sm.LoadLocalFile("userájdi");
+
+            Intent intent = new Intent(this, typeof(Main));
+            this.StartActivity(intent);
+            this.Finish();
         }
 
         private void BtnGoogleSignIn_Click(object sender, EventArgs e)
@@ -220,13 +233,6 @@ namespace GamerEvents
 
                 }
             }
-        }
-        
-        private void GoToMainPage()
-        {
-            Intent intent = new Intent(this, typeof(DetailsEvent));
-            this.StartActivity(intent);
-            this.Finish();
         }
     }
 }

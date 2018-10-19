@@ -17,7 +17,7 @@ namespace GamerEvents.DBModel
         public string gplus { get; set; }
         public string password { get; set; }
         public string realname { get; set; }
-        public int age { get; set; }
+        public int? age { get; set; }
         public string city { get; set; }
         public string konfig { get; set; }
 
@@ -27,7 +27,18 @@ namespace GamerEvents.DBModel
             _webClient.Headers.Add("Content-Type", "application/json");
             string reply = _webClient.DownloadString(url);
 
-            return JsonConvert.DeserializeObject<User>(reply);
+            try
+            {
+                return JsonConvert.DeserializeObject<User>(reply);
+            }
+            catch 
+            {
+                //nincs ilyen rekord
+                return new User();
+            }
+
+
+            
         }
 
         public static bool CreateNewUser(User user)

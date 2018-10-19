@@ -22,15 +22,12 @@
 				android:id="@+id/button4"
 				android:layout_column="0"
 				android:paddingHorizontal="20dp"
-				android:paddingVertical="30dp" />
-			
+				android:paddingVertical="30dp" />			
 			<ImageButton
 				android:src="@android:drawable/ic_menu_gallery"
 				android:id="@+id/imageButton1"
 				android:layout_column="0"
 				android:layout_width="255.5dp" />
-			
-
 		</TableRow>
 
 	</TableLayout>
@@ -97,7 +94,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/tableLayout1">
 		<TableRow
-			android:id="@+id/tableRow4"
+			android:id="@+id/tableRow1"
 			android:gravity="center">
 			<Button
 				android:text="Main"
@@ -105,15 +102,20 @@
 				android:id="@+id/btnMain"
 				android:layout_column="0" />
 			<Button
+				android:text="Create"
+				android:background="@android:color/holo_red_dark"
+				android:id="@+id/btnCreate"
+				android:layout_column="1" />
+			<Button
 				android:text="Map"
 				android:background="@android:color/holo_red_dark"
 				android:id="@+id/btnMap"
-				android:layout_column="1" />
+				android:layout_column="2" />
 			<Button
 				android:text="Profile"
 				android:background="@android:color/holo_red_dark"
 				android:id="@+id/btnProfile"
-				android:layout_column="2" />			
+				android:layout_column="3" />
 		</TableRow>
 	</TableLayout>
 

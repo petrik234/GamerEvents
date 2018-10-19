@@ -3371,11 +3371,11 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C0015
 			public const int add = 2131492885;
 			
-			// aapt resource value: 0x7F010191
-			public const int adjust_height = 2130772369;
+			// aapt resource value: 0x7F010192
+			public const int adjust_height = 2130772370;
 			
-			// aapt resource value: 0x7F010190
-			public const int adjust_width = 2130772368;
+			// aapt resource value: 0x7F010191
+			public const int adjust_width = 2130772369;
 			
 			// aapt resource value: 0x1
 			public const int ad_container = 1;
@@ -3407,8 +3407,8 @@ namespace GamerEvents
 			// aapt resource value: 0x1
 			public const int android_pay_light_with_border = 1;
 			
-			// aapt resource value: 0x7F010189
-			public const int app_name = 2130772361;
+			// aapt resource value: 0x7F010190
+			public const int app_name = 2130772368;
 			
 			// aapt resource value: 0x7F0C0006
 			public const int async = 2131492870;
@@ -3440,14 +3440,17 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C001A
 			public const int bottom = 2131492890;
 			
+			// aapt resource value: 0x7F010016
+			public const int btnCreate = 2130771990;
+			
 			// aapt resource value: 0x7F010015
 			public const int btnMain = 2130771989;
 			
-			// aapt resource value: 0x7F010016
-			public const int btnMap = 2130771990;
-			
 			// aapt resource value: 0x7F010017
-			public const int btnProfile = 2130771991;
+			public const int btnMap = 2130771991;
+			
+			// aapt resource value: 0x7F010018
+			public const int btnProfile = 2130771992;
 			
 			// aapt resource value: 0x1
 			public const int button = 1;
@@ -3575,8 +3578,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C001B
 			public const int customPanel = 2131492891;
 			
-			// aapt resource value: 0x7F010195
-			public const int dark = 2130772373;
+			// aapt resource value: 0x7F010196
+			public const int dark = 2130772374;
 			
 			// aapt resource value: 0x1
 			public const int date = 1;
@@ -3692,8 +3695,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C000B
 			public const int icon_group = 2131492875;
 			
-			// aapt resource value: 0x7F010194
-			public const int icon_only = 2130772372;
+			// aapt resource value: 0x7F010195
+			public const int icon_only = 2130772373;
 			
 			// aapt resource value: 0x1
 			public const int icon_uri = 1;
@@ -3710,8 +3713,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F010005
 			public const int imageButton1 = 2130771973;
 			
-			// aapt resource value: 0x7F010030
-			public const int imageView1 = 2130772016;
+			// aapt resource value: 0x7F010031
+			public const int imageView1 = 2130772017;
 			
 			// aapt resource value: 0x1
 			public const int index_entity_types = 1;
@@ -3764,8 +3767,8 @@ namespace GamerEvents
 			// aapt resource value: 0x1
 			public const int license_list = 1;
 			
-			// aapt resource value: 0x7F010196
-			public const int light = 2130772374;
+			// aapt resource value: 0x7F010197
+			public const int light = 2130772375;
 			
 			// aapt resource value: 0x7F0C002A
 			public const int line1 = 2131492906;
@@ -3776,8 +3779,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C002C
 			public const int listMode = 2131492908;
 			
-			// aapt resource value: 0x7F010023
-			public const int listView1 = 2130772003;
+			// aapt resource value: 0x7F010024
+			public const int listView1 = 2130772004;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int list_item = 2131492909;
@@ -3820,6 +3823,9 @@ namespace GamerEvents
 			
 			// aapt resource value: 0x7F0C0030
 			public const int multiply = 2131492912;
+			
+			// aapt resource value: 0x7F010030
+			public const int myTextView1 = 2130772016;
 			
 			// aapt resource value: 0x7F0C0047
 			public const int navigation_header_container = 2131492935;
@@ -4031,8 +4037,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C004F
 			public const int src_over = 2131492943;
 			
-			// aapt resource value: 0x7F010192
-			public const int standard = 2130772370;
+			// aapt resource value: 0x7F010193
+			public const int standard = 2130772371;
 			
 			// aapt resource value: 0x7F0C0073
 			public const int start = 2131492979;
@@ -4069,9 +4075,6 @@ namespace GamerEvents
 			
 			// aapt resource value: 0x7F010003
 			public const int tableRow2 = 2130771971;
-			
-			// aapt resource value: 0x7F010024
-			public const int tableRow4 = 2130772004;
 			
 			// aapt resource value: 0x7F0C0052
 			public const int tabMode = 2131492946;
@@ -4136,23 +4139,23 @@ namespace GamerEvents
 			// aapt resource value: 0x7F010011
 			public const int textView1 = 2130771985;
 			
-			// aapt resource value: 0x7F010018
-			public const int textView2 = 2130771992;
-			
 			// aapt resource value: 0x7F010019
-			public const int textView3 = 2130771993;
+			public const int textView2 = 2130771993;
 			
 			// aapt resource value: 0x7F010020
-			public const int textView4 = 2130772000;
+			public const int textView3 = 2130772000;
 			
 			// aapt resource value: 0x7F010021
-			public const int textView5 = 2130772001;
+			public const int textView4 = 2130772001;
 			
 			// aapt resource value: 0x7F010022
-			public const int textView6 = 2130772002;
+			public const int textView5 = 2130772002;
 			
-			// aapt resource value: 0x7F010031
-			public const int textView7 = 2130772017;
+			// aapt resource value: 0x7F010023
+			public const int textView6 = 2130772003;
+			
+			// aapt resource value: 0x7F010032
+			public const int textView7 = 2130772018;
 			
 			// aapt resource value: 0x7F0C007D
 			public const int text_input_password_toggle = 2131492989;
@@ -4226,8 +4229,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7F0C008F
 			public const int visible = 2131493007;
 			
-			// aapt resource value: 0x7F010193
-			public const int wide = 2130772371;
+			// aapt resource value: 0x7F010194
+			public const int wide = 2130772372;
 			
 			// aapt resource value: 0x7F0C005C
 			public const int withText = 2131492956;
