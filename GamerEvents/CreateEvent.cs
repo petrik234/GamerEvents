@@ -48,10 +48,6 @@ namespace GamerEvents
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
 
-
-
-
-
             createGame = FindViewById<EditText>(Resource.Id.cEinputGame);
             createTime = FindViewById<EditText>(Resource.Id.cEinputTime);
             createLocation = FindViewById<EditText>(Resource.Id.cEinputLocation);
