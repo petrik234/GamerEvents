@@ -65,8 +65,9 @@ namespace GamerEvents
 
         private void createEventsButton_Click(object sender, EventArgs e)
         {
+            
             if (createGame.Text == string.Empty || 
-                //createTime.Text == string.Empty || 
+                createTime.Text == string.Empty || 
                 createLocation.Text == string.Empty ||
                 createDescription.Text == string.Empty )
             {
@@ -76,18 +77,21 @@ namespace GamerEvents
 
             SettingsManager sm = new SettingsManager();
             string userid = sm.LoadLocalFile("userájdi");
+            int uid = Convert.ToInt32(userid);
+            int cNumber = Convert.ToInt32(createNumber.Text);
+            
 
 
             Event formEvent = new Event
             {
 
 
-                //ownerid = userid.Text,
-                //date = createTime.Text,
+                ownerid = uid,
+                startdate = createTime.Text,
                 location = createLocation.Text,
                 game = createGame.Text,
-                details = createDescription.Text
-                //userlimit = createNumber
+                details = createDescription.Text,
+                userlimit = cNumber
 
             };
 
