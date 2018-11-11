@@ -1,91 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
-
-	<TableLayout
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/tableLayout2">
-		<TableRow
-			android:id="@+id/tableRow2">
-			<Button
-				android:text="Jelentkezés"
-				android:background="@color/abc_search_url_text_normal"
-				android:id="@+id/button4"
-				android:layout_column="0"
-				android:paddingHorizontal="20dp"
-				android:paddingVertical="30dp" />			
-			<ImageButton
-				android:src="@android:drawable/ic_menu_gallery"
-				android:id="@+id/imageButton1"
-				android:layout_column="0"
-				android:layout_width="255.5dp" />
-		</TableRow>
-
-	</TableLayout>
-	<TextView
-		android:text="Játék Neve"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView1"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp" />
-	<TextView
-		android:text="Időpont"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView2"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp"/>
-	<TextView
-		android:text="Helyszín"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView3"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp"/>
-	<TextView
-		android:text="Téma"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView4"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp"/>
-	<TextView
-		android:text="Leírás"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView5"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp"/>
-	<TextView
-		android:text="Létszám limit "
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView6"
-		android:textSize="20sp"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="8dp"/>
-	<ListView
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_width="match_parent"
-		android:layout_height="114.5dp"
-		android:id="@+id/listView1"		
-	/>
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -118,5 +38,112 @@
 				android:layout_column="3" />
 		</TableRow>
 	</TableLayout>
+	
+<!--
+	<ImageView
+				android:src="@android:drawable/ic_menu_gallery"
+				android:id="@+id/imageButton1"
+				android:layout_column="0"
+				android:layout_width="255.5dp" /> -->
+
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:padding="30px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<TableRow
+			android:gravity="center">
+			<TextView
+				android:text="Játék neve:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:text="test"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="15dp"
+				android:id="@+id/tvGame" />			
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			<TextView
+				android:text="Időpont:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:text="test"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="15dp"
+				android:id="@+id/tvStartDate" />			
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			<TextView
+				android:text="Helyszín:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:text="test"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="15dp"
+				android:id="@+id/tvLocation" />			
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			<TextView
+				android:text="Leírás:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:text="test"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="15dp"
+				android:id="@+id/tvDetails" />			
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			<TextView
+				android:text="Max fő:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<TextView
+				android:text="test"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="15dp"
+				android:id="@+id/tvMaxMember" />			
+		</TableRow>
+		<TableRow
+			android:gravity="center"
+			android:paddingTop="25dp">
+			<Button
+				android:text="Jelentkezés"
+				android:gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/btnSubscribe"
+				 />
+		</TableRow>
+	</TableLayout>
+
 
 </LinearLayout>

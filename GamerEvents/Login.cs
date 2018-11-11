@@ -20,6 +20,7 @@ using Android.Gms.Plus;
 using Android.Gms.Plus.Model.People;
 using Android.Content;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace GamerEvents
 {
@@ -43,7 +44,10 @@ namespace GamerEvents
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.login);
-            
+
+            //skip login
+            //GoToMainPage(1);
+
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
             builder.AddConnectionCallbacks(this);
             builder.AddOnConnectionFailedListener(this);
@@ -79,7 +83,7 @@ namespace GamerEvents
                 password = etPass.Text
             };
                        
-            User userResult = User.GetUserByEmail(formUser.email);
+            User userResult = User.GetByEmail(formUser.email);
             if (userResult.email != null)
             {
                 byte[] encodedPassword = new UTF8Encoding().GetBytes(etPass.Text);
@@ -96,20 +100,30 @@ namespace GamerEvents
                 else
                 {
                     //sikertelen bejelentkezéss
+                    Toast.MakeText(this, "Sikertelen Bejelentkezés\nRossz a jelszó!", ToastLength.Long).Show();
                 }
             }
             else
             {
-                if (User.CreateNewUser(formUser))
+                if (User.CreateNew(formUser))
                 {
+                    Toast.MakeText(this, "Sikeres regisztráció", ToastLength.Long).Show();
                     //regisztrált
                     //lekérjük az idjét
-                    User loggedUser = User.GetUserByEmail(formUser.email);
-                    GoToMainPage(loggedUser.userid);
+                    User loggedUser = User.GetByEmail(formUser.email);
+                    Handler h = new Handler();
+                    Action myAction = () =>
+                    {
+                        GoToMainPage(loggedUser.userid);
+                    };
+
+                    h.PostDelayed(myAction, 2000);
+                    
                 }
                 else
                 {
                     //sikertelen regisztráció
+                    Toast.MakeText(this, "Sikertelen regisztráció\nAz email foglalt!", ToastLength.Short).Show();
                 }
            }
         }
@@ -117,7 +131,7 @@ namespace GamerEvents
         private void GoToMainPage(int userId)
         {
             SettingsManager sm = new SettingsManager();
-            sm.WriteLocalFile("userájdi", userId.ToString());
+            sm.WriteLocalFile("userid", userId.ToString());
 
             //string asd = sm.LoadLocalFile("userájdi");
 

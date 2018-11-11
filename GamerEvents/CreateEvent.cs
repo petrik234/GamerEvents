@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using GamerEvents.DBModel;
 
 namespace GamerEvents
 {
@@ -19,6 +20,17 @@ namespace GamerEvents
         Button btnProfile;
         Button btnMap;
         Button btnCreate;
+
+
+        private EditText createGame;
+        private EditText createTime;
+        private EditText createLocation;
+        private EditText createDescription;
+        private EditText createNumber;
+        private Button createEventsB;
+
+
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,6 +47,68 @@ namespace GamerEvents
             btnProfile.Click += BtnProfile_Click;
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
+
+            createGame = FindViewById<EditText>(Resource.Id.cEinputGame);
+            createTime = FindViewById<EditText>(Resource.Id.cEinputTime);
+            createLocation = FindViewById<EditText>(Resource.Id.cEinputLocation);
+            createDescription = FindViewById<EditText>(Resource.Id.cEinputDescription);
+            createNumber = FindViewById<EditText>(Resource.Id.cEnumber);
+
+            createEventsB = FindViewById<Button>(Resource.Id.createEventsButton);
+
+
+            createEventsB.Click += createEventsButton_Click;
+
+        }
+
+
+
+        private void createEventsButton_Click(object sender, EventArgs e)
+        {
+            
+            if (createGame.Text == string.Empty || 
+                createTime.Text == string.Empty || 
+                createLocation.Text == string.Empty ||
+                createDescription.Text == string.Empty )
+            {
+                //hibakezelés
+                return;
+            }
+
+            SettingsManager sm = new SettingsManager();
+            string userid = sm.LoadLocalFile("userájdi");
+            int uid = Convert.ToInt32(userid);
+            int cNumber = Convert.ToInt32(createNumber.Text);
+            
+
+
+            Event formEvent = new Event
+            {
+
+
+                ownerid = uid,
+                startdate = createTime.Text,
+                location = createLocation.Text,
+                game = createGame.Text,
+                details = createDescription.Text,
+                userlimit = cNumber
+
+            };
+
+
+
+
+            if (Event.CreateNewEvent(formEvent))
+            {
+                //event felvétele sikeresen megtörtént
+
+            }
+            else
+            {
+                //Nem sikerült az event felvétel
+            }
+
+
         }
 
 

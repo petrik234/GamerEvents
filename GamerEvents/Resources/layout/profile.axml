@@ -6,54 +6,7 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px" >
-	<ImageView
-		android:src="@android:drawable/ic_menu_gallery"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/imageView1"
-		android:layout_marginBottom="51.5dp" />
-	<TextView
-		android:text="Nickname"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView1" />
-	<TextView
-		android:text="Real name"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView2" />
-	<TextView
-		android:text="Age"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView3" />
-	<TextView
-		android:text="City"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView4" />
-	<TextView
-		android:text="E-mail"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView5" />
-	<TextView
-		android:text="Config"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView6" />
-	<TextView
-		android:text="Events"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView7" />
+	
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -86,5 +39,122 @@
 				android:layout_column="3" />
 		</TableRow>
 	</TableLayout>
+	
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:padding="30px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tableLayout1">
+		<TableRow
+			android:gravity="center">
+			
+			<TextView
+				android:text="Email: "
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvEmail" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etEmail"
+				android:hint="Email"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp"
+				android:shadowColor="#ff212121"
+				android:textColor="#ffd50000" />
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			
+			<TextView
+				android:text="Real name: "
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvName" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etName"
+				android:hint="Name"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp" />
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			
+			<TextView
+				android:text="Age:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvAge" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etAge"
+				android:hint="Age"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp"
+				android:numeric="integer" />
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			
+			<TextView
+				android:text="City:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvCity" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etCity"
+				android:hint="City"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp" />
+		</TableRow>
+		<TableRow
+			android:gravity="center">
+			
+			<TextView
+				android:text="Konfig:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvKonfig" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etKonfig"
+				android:hint="Konfig"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp" />
+		</TableRow>
+		<TableRow
+			android:gravity="center"
+			android:paddingTop="25dp">
+			<Button
+				android:text="Mentés"
+				android:gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/btnSave"
+				 />
+		</TableRow>
+	</TableLayout>
+	
+
+	<!--<TextView
+		android:text="Events"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView7" /> -->
+	
 
 </LinearLayout>
