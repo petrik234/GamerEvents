@@ -47,7 +47,7 @@ namespace GamerEvents.DBModel
             }
             catch
             {
-                return new Event[] { new Event { details="ERROR"} };
+                return null;
             }
         }
 

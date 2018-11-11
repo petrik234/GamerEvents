@@ -10,7 +10,7 @@
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:padding="30px"
+		android:padding="15px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/tableLayout1">
@@ -62,9 +62,7 @@
 				android:id="@+id/etEmail"
 				android:hint="Email"
 				android:paddingHorizontal="50dp"
-				android:paddingVertical="15dp"
-				android:shadowColor="#ff212121"
-				android:textColor="#ffd50000" />
+				android:paddingVertical="15dp" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -99,7 +97,8 @@
 				android:hint="Age"
 				android:paddingHorizontal="50dp"
 				android:paddingVertical="15dp"
-				android:numeric="integer" />
+				android:numeric="integer"
+				android:editable="false" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -116,7 +115,8 @@
 				android:id="@+id/etCity"
 				android:hint="City"
 				android:paddingHorizontal="50dp"
-				android:paddingVertical="15dp" />
+				android:paddingVertical="15dp"
+				android:editable="false" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -126,6 +126,7 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				
 				android:id="@+id/tvKonfig" />
 			<EditText
 				android:layout_width="match_parent"
@@ -137,6 +138,44 @@
 		</TableRow>
 		<TableRow
 			android:gravity="center"
+			android:visibility="invisible"
+			android:id="@+id/trPass">
+			<TextView
+				android:text="Jelszó:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				
+				android:id="@+id/tvPass" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etPass"
+				android:hint="Jelszó"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp"
+				android:password="true" />
+		</TableRow>
+		<TableRow
+			android:gravity="center"
+			android:visibility="invisible"
+			android:id="@+id/trPass2">
+			<TextView
+				android:text="Jelszó még egyszer:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etPass2"
+				android:hint="Jelszó"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp"
+				android:password="true" />
+		</TableRow>
+		<TableRow
+			android:gravity="center"
 			android:paddingTop="25dp">
 			<Button
 				android:text="Mentés"
@@ -144,17 +183,17 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/btnSave"
+				android:visibility="invisible" 
+				 />
+			<Button
+				android:text="Szerkesztés"
+				android:gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/btnModify"
 				 />
 		</TableRow>
 	</TableLayout>
-	
-
-	<!--<TextView
-		android:text="Events"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView7" /> -->
 	
 
 </LinearLayout>

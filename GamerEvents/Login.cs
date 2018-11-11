@@ -46,7 +46,7 @@ namespace GamerEvents
             SetContentView(Resource.Layout.login);
 
             //skip login
-            //GoToMainPage(1);
+            GoToMainPage(1);
 
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
             builder.AddConnectionCallbacks(this);

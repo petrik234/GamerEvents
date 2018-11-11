@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using GamerEvents.DBModel;
+using Android.Gms.Location.Places;
 
 namespace GamerEvents
 {
@@ -22,14 +23,15 @@ namespace GamerEvents
         Button btnCreate;
 
 
-        private EditText createGame;
-        private EditText createTime;
         private EditText createLocation;
         private EditText createDescription;
         private EditText createNumber;
         private Button createEventsB;
+        private TextView dateDisplay;
+        private TextView timeDisplay;
 
-
+        DateTime selectedDateTime = new DateTime();
+        string selectedGame = string.Empty;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,53 +44,94 @@ namespace GamerEvents
             btnProfile = FindViewById<Button>(Resource.Id.btnProfile);
             btnMap = FindViewById<Button>(Resource.Id.btnMap);
             btnCreate = FindViewById<Button>(Resource.Id.btnCreate);
-            
+
             btnMain.Click += BtnMain_Click;
             btnProfile.Click += BtnProfile_Click;
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
 
-            createGame = FindViewById<EditText>(Resource.Id.cEinputGame);
-            createTime = FindViewById<EditText>(Resource.Id.cEinputTime);
+            dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
+            timeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
             createLocation = FindViewById<EditText>(Resource.Id.cEinputLocation);
             createDescription = FindViewById<EditText>(Resource.Id.cEinputDescription);
             createNumber = FindViewById<EditText>(Resource.Id.cEnumber);
+
 
             createEventsB = FindViewById<Button>(Resource.Id.createEventsButton);
 
 
             createEventsB.Click += createEventsButton_Click;
+            dateDisplay.Click += _dateSelectButton_Click;
+            timeDisplay.Click += TimeDisplay_Click;
+
+
+            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = adapter;
 
         }
 
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            selectedGame = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+        }
 
+        private void TimeDisplay_Click(object sender, EventArgs e)
+        { 
+            TimePickerFragment frag = TimePickerFragment.NewInstance(
+            delegate (DateTime time)
+            {
+                timeDisplay.Text = time.ToString("HH:mm");
+                selectedDateTime = new DateTime(selectedDateTime.Year, selectedDateTime.Month, selectedDateTime.Day, time.Hour, time.Minute, 0);
+               });
+
+            frag.Show(FragmentManager, TimePickerFragment.TAG);
+        }
+
+        private void _dateSelectButton_Click(object sender, EventArgs e)
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime date)
+            {
+                dateDisplay.Text = date.ToString("yyyy-MM-dd");
+                selectedDateTime = new DateTime(date.Year, date.Month, date.Day, selectedDateTime.Hour, selectedDateTime.Minute, 0);
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
 
         private void createEventsButton_Click(object sender, EventArgs e)
         {
-            if (createGame.Text == string.Empty || 
-                //createTime.Text == string.Empty || 
+
+            if (dateDisplay.Text == string.Empty ||
                 createLocation.Text == string.Empty ||
-                createDescription.Text == string.Empty )
+                createDescription.Text == string.Empty ||
+                timeDisplay.Text == string.Empty)
             {
                 //hibakezelés
+                Toast.MakeText(this, "Valamit nem töltöttél ki!", ToastLength.Short).Show();
                 return;
             }
 
             SettingsManager sm = new SettingsManager();
-            string userid = sm.LoadLocalFile("userájdi");
+            string userid = sm.LoadLocalFile("userid");
+            int uid = Convert.ToInt32(userid);
+            int cNumber = Convert.ToInt32(createNumber.Text);
+
 
 
             Event formEvent = new Event
             {
-
-
-                //ownerid = userid.Text,
-                //date = createTime.Text,
+                ownerid = uid,
+                startdate = selectedDateTime.ToString("yyyy-MM-dd HH:mm:ss"),
                 location = createLocation.Text,
-                game = createGame.Text,
-                details = createDescription.Text
-                //userlimit = createNumber
-
+                game = selectedGame,
+                details = createDescription.Text,
+                userlimit = cNumber
             };
 
 
@@ -97,11 +140,23 @@ namespace GamerEvents
             if (Event.CreateNewEvent(formEvent))
             {
                 //event felvétele sikeresen megtörtént
-
+                Toast.MakeText(this, "Az eventet sikeresen létrehoztad!", ToastLength.Short).Show();
+                createEventsB.Enabled = false;
+                Handler h = new Handler();
+                Action myAction = () =>
+                {
+                    Intent intent = new Intent(this, typeof(Main));
+                    this.StartActivity(intent);
+                    this.Finish();
+                };
+                h.PostDelayed(myAction, 1500);
+                
+                
             }
             else
             {
                 //Nem sikerült az event felvétel
+                Toast.MakeText(this, "Az event felvétele nem sikerült!", ToastLength.Short).Show();
             }
 
 

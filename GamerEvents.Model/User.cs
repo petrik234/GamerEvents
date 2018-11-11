@@ -34,7 +34,7 @@ namespace GamerEvents.DBModel
             catch 
             {
                 //nincs ilyen rekord
-                return new User();
+                return null;
             }
         }
 
