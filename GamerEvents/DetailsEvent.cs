@@ -20,15 +20,20 @@ namespace GamerEvents
         Button btnProfile;
         Button btnMap;
         Button btnCreate;
+        Button btnSubscribe;
 
         TextView tvGame;
         TextView tvStartDate;
         TextView tvLocation;
         TextView tvDetails;
         TextView tvMaxMember ;
-        Button btnSubscribe;
+
+        Subscribe[] allSub;
 
         Event currentEvent;
+        User currentUser;
+
+        bool isCurrentUserSubscribed;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,9 +42,11 @@ namespace GamerEvents
             SetContentView(Resource.Layout.detailsEvent);
             
             SettingsManager sm = new SettingsManager();
-            int.TryParse(sm.LoadLocalFile("eventid"), out int id);
-            currentEvent = Event.GetById(id);
-            
+            int.TryParse(sm.LoadLocalFile("eventid"), out int eid);
+            currentEvent = Event.GetById(eid);
+            int.TryParse(sm.LoadLocalFile("userid"), out int uid);
+            currentUser = User.GetById(uid);
+            allSub = Subscribe.GetAll();
             tvGame = FindViewById<TextView>(Resource.Id.tvGame);
             tvStartDate = FindViewById<TextView>(Resource.Id.tvStartDate);
             tvLocation = FindViewById<TextView>(Resource.Id.tvLocation);
@@ -50,7 +57,7 @@ namespace GamerEvents
             tvStartDate.Text = currentEvent.startdate;
             tvLocation.Text = currentEvent.location;
             tvDetails.Text = currentEvent.details;
-            tvMaxMember.Text = currentEvent.userlimit.ToString();
+            tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count() , currentEvent.userlimit.ToString());
 
             btnSubscribe = FindViewById<Button>(Resource.Id.btnSubscribe);
 
@@ -64,11 +71,60 @@ namespace GamerEvents
             btnProfile.Click += BtnProfile_Click;
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
+
+            isCurrentUserSubscribed = (allSub.Where(x => x.userid == currentUser.userid && x.eventid == currentEvent.eventid).Count() == 0) ? false : true;
+            btnSubscribe.Text = (isCurrentUserSubscribed) ? "Leiratkozás" : "Feliratkozás";
+
         }
 
         private void BtnSubscribe_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
+
+            if (isCurrentUserSubscribed)
+            {
+                int currentSubId = allSub.Where(x => x.userid == currentUser.userid && x.eventid == currentEvent.eventid).Select(x => x.subid).First(); ;
+                
+                //leiratkozunk
+                if (Subscribe.deleteById(currentSubId))
+                {
+                    Toast.MakeText(this, "Sikeresen leiratkoztál!", ToastLength.Short).Show();
+                    isCurrentUserSubscribed = false;
+                    btnSubscribe.Text = "Feliratkozás";
+                }
+                else
+                {
+                    Toast.MakeText(this, "Nem sikerült leiratkozni!", ToastLength.Short).Show();
+                }
+                
+            }
+            else
+            {
+                if (allSub.Where(x => x.eventid == currentEvent.eventid).Count() >= currentEvent.userlimit)
+                {
+                    Toast.MakeText(this, "Az esemény jelenleg be van telve!", ToastLength.Short).Show();
+                    return;
+                }
+                // feliratkozunk
+                Subscribe subscribe = new Subscribe()
+                {
+                    userid = currentUser.userid,
+                    eventid = currentEvent.eventid
+                };
+
+                if (Subscribe.CreateNew(subscribe))
+                {
+                    btnSubscribe.Text = "Leiratkozás";
+                    isCurrentUserSubscribed = true;
+                    Toast.MakeText(this, "Sikeresen feliratkoztál!", ToastLength.Short).Show();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Nem sikerült feliratkozni!", ToastLength.Short).Show();
+                }
+            }
+            allSub = Subscribe.GetAll();
+            tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count(), currentEvent.userlimit.ToString());
         }
 
         private void BtnMain_Click(object sender, EventArgs e)

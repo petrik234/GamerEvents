@@ -63,20 +63,38 @@
 				android:layout_marginTop="0.0dp" />
 		</TableRow>
 	</TableLayout>
-	<EditText
+	 <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/game_prompt"
+    />
+	<TableLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/cEinputGame"
-		android:hint="Játék neve"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="15dp" />
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/cEinputTime"
-		android:hint="Időpont"
-		android:paddingHorizontal="50dp"
-		android:paddingVertical="15dp" />
+		android:id="@+id/tableLayout2">
+		<TableRow
+			android:id="@+id/tableRow2"
+			android:gravity = "center"
+			android:layout_width="match_parent">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/dateDisplay"
+				android:hint="Dátum"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp" />
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/timeDisplay"
+				android:hint="Óra"
+				android:paddingHorizontal="50dp"
+				android:paddingVertical="15dp" />
+		</TableRow>
+	</TableLayout>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
