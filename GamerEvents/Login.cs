@@ -66,7 +66,6 @@ namespace GamerEvents
             btnOK.Click += BtnOK_Click;
             btnGoogleSignIn.Click += BtnGoogleSignIn_Click;
 
-
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
@@ -82,7 +81,7 @@ namespace GamerEvents
                 email = etEmail.Text,
                 password = etPass.Text
             };
-                       
+
             User userResult = User.GetByEmail(formUser.email);
             if (userResult.email != null)
             {
@@ -133,7 +132,7 @@ namespace GamerEvents
             SettingsManager sm = new SettingsManager();
             sm.WriteLocalFile("userid", userId.ToString());
 
-            //string asd = sm.LoadLocalFile("userájdi");
+            //string asd = sm.LoadLocalFile("userid");
 
             Intent intent = new Intent(this, typeof(Main));
             this.StartActivity(intent);

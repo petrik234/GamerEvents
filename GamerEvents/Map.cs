@@ -5,20 +5,24 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Gms.Maps;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
 namespace GamerEvents
 {
     [Activity(Label = "Map")]
-    public class Map : Activity
+    public class Map : AppCompatActivity, IOnMapReadyCallback
     {
         Button btnMain;
         Button btnProfile;
         Button btnMap;
         Button btnCreate;
+
+        MapFragment mapFragment;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,9 +39,15 @@ namespace GamerEvents
             btnProfile.Click += BtnProfile_Click;
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
+
+            mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map2);
+            mapFragment.GetMapAsync(this);
         }
 
-
+        public void OnMapReady(GoogleMap map)
+        {
+            map.MapType = GoogleMap.MapTypeTerrain;
+        }
 
         private void BtnMain_Click(object sender, EventArgs e)
         {
