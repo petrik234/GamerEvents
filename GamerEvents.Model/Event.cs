@@ -20,8 +20,8 @@ namespace GamerEvents.DBModel
         public string game { get; set; }
         public string details { get; set; }
         public int userlimit { get; set; }
-        public float lon { get; set; }
-        public float lat { get; set; }
+        public double lon { get; set; }
+        public double lat { get; set; }
 
 
 

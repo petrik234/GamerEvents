@@ -131,6 +131,9 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Maps">
       <Version>70.1501.0-preview2</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Places">
+      <Version>70.1501.0-preview2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Plus">
       <Version>70.1501.0-preview2</Version>
     </PackageReference>

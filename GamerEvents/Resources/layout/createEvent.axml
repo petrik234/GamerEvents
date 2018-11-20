@@ -95,13 +95,13 @@
 				android:paddingVertical="15dp" />
 		</TableRow>
 	</TableLayout>
-	<EditText
+	<Button
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/cEinputLocation"
+		android:id="@+id/btnPickPlace"
 		android:paddingHorizontal="50dp"
 		android:paddingVertical="15dp"
-		android:hint="Helyszín" />
+		android:hint="Válassz helyszínt" />
 	<EditText
 		android:layout_width="382.5dp"
 		android:layout_height="wrap_content"
@@ -109,30 +109,23 @@
 		android:paddingHorizontal="50dp"
 		android:paddingVertical="15dp"
 		android:hint="Leírás" />
-	<TableLayout
+	
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/tableLayout2">
-		<TableRow
-			android:id="@+id/tableRow2">
-			<TextView
-				android:text="Létszám limit: "
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/textView1"
-				android:layout_column="0"
-				android:textSize="20sp"
-				android:padding="5dp" />
-			<EditText
-				android:inputType="number"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/cEnumber"
-				android:layout_column="1"/>
-		</TableRow>
-	</TableLayout>
+	<EditText
+		android:inputType="number"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/cEnumber"
+		android:paddingHorizontal="50dp"
+		android:paddingVertical="15dp"
+		android:hint="Létszám limit "
+		android:layout_column="1"/>
+		
+
 	
 	
 </LinearLayout>

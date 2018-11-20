@@ -11,27 +11,34 @@ using Android.Views;
 using Android.Widget;
 using GamerEvents.DBModel;
 using Android.Gms.Location.Places;
+using Android.Gms.Location;
+using Android.Gms.Location.Places.UI;
 
 namespace GamerEvents
 {
     [Activity(Label = "CreateEvent")]
     public class CreateEvent : Activity
     {
+        private static readonly int PLACE_PICKER_REQUEST = 1;
         Button btnMain;
         Button btnProfile;
         Button btnMap;
         Button btnCreate;
 
-
-        private EditText createLocation;
+        private Button btnPickPlace;
         private EditText createDescription;
         private EditText createNumber;
         private Button createEventsB;
+  
         private TextView dateDisplay;
         private TextView timeDisplay;
 
         DateTime selectedDateTime = new DateTime();
         string selectedGame = string.Empty;
+        string selectedLocation = string.Empty;
+        double selectedLon = 0f;
+        double selectedLat = 0f;
+
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -40,10 +47,15 @@ namespace GamerEvents
 
             SetContentView(Resource.Layout.createEvent);
 
+            
+
+            //startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
+
             btnMain = FindViewById<Button>(Resource.Id.btnMain);
             btnProfile = FindViewById<Button>(Resource.Id.btnProfile);
             btnMap = FindViewById<Button>(Resource.Id.btnMap);
             btnCreate = FindViewById<Button>(Resource.Id.btnCreate);
+
 
             btnMain.Click += BtnMain_Click;
             btnProfile.Click += BtnProfile_Click;
@@ -52,7 +64,7 @@ namespace GamerEvents
 
             dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
             timeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
-            createLocation = FindViewById<EditText>(Resource.Id.cEinputLocation);
+            btnPickPlace = FindViewById<Button>(Resource.Id.btnPickPlace);
             createDescription = FindViewById<EditText>(Resource.Id.cEinputDescription);
             createNumber = FindViewById<EditText>(Resource.Id.cEnumber);
 
@@ -63,6 +75,8 @@ namespace GamerEvents
             createEventsB.Click += createEventsButton_Click;
             dateDisplay.Click += _dateSelectButton_Click;
             timeDisplay.Click += TimeDisplay_Click;
+            btnPickPlace.Click += BtnGetLoc_Click;
+            
 
 
             Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
@@ -75,6 +89,34 @@ namespace GamerEvents
             spinner.Adapter = adapter;
 
         }
+
+        private void BtnGetLoc_Click(object sender, EventArgs e)
+        {
+
+            var builder = new PlacePicker.IntentBuilder();
+            StartActivityForResult(builder.Build(this), PLACE_PICKER_REQUEST);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            if (requestCode == PLACE_PICKER_REQUEST && resultCode == Result.Ok)
+            {
+                GetPlaceFromPicker(data);
+            }
+
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
+
+        private void GetPlaceFromPicker(Intent data)
+        {
+            var placePicked = PlacePicker.GetPlace(this, data);
+            selectedLocation = placePicked?.NameFormatted?.ToString();
+            btnPickPlace.Text = selectedLocation;
+            selectedLon = placePicked.LatLng.Longitude;
+            selectedLat = placePicked.LatLng.Latitude;
+
+        }
+    
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -106,9 +148,10 @@ namespace GamerEvents
 
         private void createEventsButton_Click(object sender, EventArgs e)
         {
+            
 
             if (dateDisplay.Text == string.Empty ||
-                createLocation.Text == string.Empty ||
+                selectedLocation == string.Empty ||
                 createDescription.Text == string.Empty ||
                 timeDisplay.Text == string.Empty)
             {
@@ -128,10 +171,12 @@ namespace GamerEvents
             {
                 ownerid = uid,
                 startdate = selectedDateTime.ToString("yyyy-MM-dd HH:mm:ss"),
-                location = createLocation.Text,
+                location = selectedLocation,
                 game = selectedGame,
                 details = createDescription.Text,
-                userlimit = cNumber
+                userlimit = cNumber,
+                lat = selectedLat,
+                lon = selectedLon
             };
 
 
@@ -143,12 +188,12 @@ namespace GamerEvents
                 Toast.MakeText(this, "Az eventet sikeresen létrehoztad!", ToastLength.Short).Show();
                 createEventsB.Enabled = false;
                 Handler h = new Handler();
-                Action myAction = () =>
+                void myAction()
                 {
                     Intent intent = new Intent(this, typeof(Main));
                     this.StartActivity(intent);
                     this.Finish();
-                };
+                }
                 h.PostDelayed(myAction, 1500);
                 
                 
