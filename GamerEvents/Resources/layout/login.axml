@@ -1,66 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:orientation = "vertical"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@android:color/background_light"
-	android:weightSum="100"
-	android:minWidth="25px"
-	android:minHeight="25px">
-	<TextView
-		android:text="Gamer Events"
-		android:textAppearance ="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:id="@+id/txtGamerEvents"
-		android:gravity="center"
-		android:textColor="#ff152c78"
-		android:textStyle="bold"
-		android:textSize="25sp"
-		android:layout_weight="15" />
-	<EditText
-		android:inputType="textEmailAddress"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="15"
-		android:layout_marginLeft="30dp"
-		android:layout_marginRight="30dp"
-		android:textSize="15sp"
-		android:id="@+id/TextEmail"
-		android:hint="E-mail"
-		android:paddingLeft="20dp"/>
-	<EditText
-		android:inputType="textEmailAddress"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="15"
-		android:layout_marginLeft="30dp"
-		android:layout_marginRight="30dp"
-		android:textSize="15sp"
-		android:id="@+id/TextPass"
-		android:hint="Jelszó"
-		android:paddingLeft="20dp" />
-	<Button
-		android:text="Regisztrácó/Belépés"
-		android:layout_marginTop="10dp"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:id="@+id/buttonOk"
-		android:layout_weight="20"
-		android:layout_marginLeft="30dp"
-		android:layout_marginRight="30dp"
-		android:textSize="15sp" />
-	<com.google.android.gms.common.SignInButton
-		android:id="@+id/sign_in_button"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_marginTop="10dp"
-		android:layout_marginLeft="20dp"
-		android:layout_marginRight="20dp"
-		android:layout_marginBottom="30dp"
-		android:paddingTop="10dp"
-		android:layout_weight="20"/>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#33000000"
+    android:weightSum="100"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Gamer Events"
+        android:textAppearance ="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/txtGamerEvents"
+        android:gravity="center"
+        android:textColor="#ff152c78"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_weight="15" />
+    <EditText
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="15sp"
+        android:id="@+id/TextEmail"
+        android:hint="E-mail"
+        android:paddingLeft="20dp"/>
+    <EditText
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="15sp"
+        android:id="@+id/TextPass"
+        android:hint="Jelszó"
+        android:paddingLeft="20dp" />
+    <Button
+        android:text="Regisztrácó/Belépés"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/buttonOk"
+        android:layout_weight="20"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="15sp"
+        android:background="#33000000" />
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:paddingTop="10dp"
+        android:layout_weight="20"/>
 </LinearLayout>

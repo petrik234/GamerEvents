@@ -5,7 +5,8 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:minWidth="25px"
-	android:minHeight="25px">
+	android:minHeight="25px"
+	android:background="#33000000">
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -18,40 +19,33 @@
 			android:gravity="center">
 			<Button
 				android:text="Main"
-				android:background="@android:color/holo_red_dark"
+				android:background="#545454"
 				android:id="@+id/btnMain"
 				android:layout_column="0" />
 			<Button
 				android:text="Create"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff606060"
 				android:id="@+id/btnCreate"
 				android:layout_column="1" />
 			<Button
 				android:text="Map"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff747474"
 				android:id="@+id/btnMap"
 				android:layout_column="2" />
 			<Button
 				android:text="Profile"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff797979"
 				android:id="@+id/btnProfile"
 				android:layout_column="3" />
 		</TableRow>
 	</TableLayout>
-	
-<!--
-	<ImageView
-				android:src="@android:drawable/ic_menu_gallery"
-				android:id="@+id/imageButton1"
-				android:layout_column="0"
-				android:layout_width="255.5dp" /> -->
-
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:padding="30px"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		android:backgroundTint="#ffff3d00">
 		<TableRow
 			android:gravity="center">
 			<TextView
@@ -66,7 +60,7 @@
 				android:layout_height="wrap_content"
 				android:paddingHorizontal="20dp"
 				android:paddingVertical="15dp"
-				android:id="@+id/tvGame" />			
+				android:id="@+id/tvGame" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -82,7 +76,7 @@
 				android:layout_height="wrap_content"
 				android:paddingHorizontal="20dp"
 				android:paddingVertical="15dp"
-				android:id="@+id/tvStartDate" />			
+				android:id="@+id/tvStartDate" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -98,7 +92,7 @@
 				android:layout_height="wrap_content"
 				android:paddingHorizontal="20dp"
 				android:paddingVertical="15dp"
-				android:id="@+id/tvLocation" />			
+				android:id="@+id/tvLocation" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -114,7 +108,7 @@
 				android:layout_height="wrap_content"
 				android:paddingHorizontal="20dp"
 				android:paddingVertical="15dp"
-				android:id="@+id/tvDetails" />			
+				android:id="@+id/tvDetails" />
 		</TableRow>
 		<TableRow
 			android:gravity="center">
@@ -130,7 +124,7 @@
 				android:layout_height="wrap_content"
 				android:paddingHorizontal="20dp"
 				android:paddingVertical="15dp"
-				android:id="@+id/tvMaxMember" />			
+				android:id="@+id/tvMaxMember" />
 		</TableRow>
 		<TableRow
 			android:gravity="center"

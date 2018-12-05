@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:id="@+id/linearLayout" >
-	
-	
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:id="@+id/linearLayout"
+	android:background="#33000000">
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -13,35 +13,34 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/tableLayout1">
-		
 		<TableRow
 			android:id="@+id/tableRow1"
 			android:gravity="center">
 			<Button
 				android:text="Main"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff999c0e"
 				android:id="@+id/btnMain"
 				android:layout_column="0" />
 			<Button
 				android:text="Create"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff606060"
 				android:id="@+id/btnCreate"
 				android:layout_column="1" />
 			<Button
 				android:text="Map"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff747474"
 				android:id="@+id/btnMap"
 				android:layout_column="2" />
 			<Button
 				android:text="Profile"
-				android:background="@android:color/holo_red_dark"
+				android:background="#ff797979"
 				android:id="@+id/btnProfile"
 				android:layout_column="3" />
 		</TableRow>
 	</TableLayout>
-			<android.support.v7.widget.RecyclerView
-			android:id="@+id/rvEvent"
-			android:scrollbars="vertical"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content" />
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/rvEvent"
+		android:scrollbars="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
 </LinearLayout>
