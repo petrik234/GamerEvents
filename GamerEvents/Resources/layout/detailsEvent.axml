@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px"
-	android:background="#33000000">
+	android:background="#ccc">
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -24,17 +24,17 @@
 				android:layout_column="0" />
 			<Button
 				android:text="Create"
-				android:background="#ff606060"
+				android:background="#606060"
 				android:id="@+id/btnCreate"
 				android:layout_column="1" />
 			<Button
 				android:text="Map"
-				android:background="#ff747474"
+				android:background="#747474"
 				android:id="@+id/btnMap"
 				android:layout_column="2" />
 			<Button
 				android:text="Profile"
-				android:background="#ff797979"
+				android:background="#797979"
 				android:id="@+id/btnProfile"
 				android:layout_column="3" />
 		</TableRow>
@@ -45,7 +45,7 @@
 		android:padding="30px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:backgroundTint="#ffff3d00">
+		android:backgroundTint="#ff3d00">
 		<TableRow
 			android:gravity="center">
 			<TextView

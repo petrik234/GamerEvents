@@ -6,8 +6,9 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px"
-	app:backgroundTint="#ff000000"
-	android:background="#33000000">
+	android:background="#33000000"
+>
+	
 	<TableLayout
 		android:minWidth="25px"
 		android:minHeight="25px"

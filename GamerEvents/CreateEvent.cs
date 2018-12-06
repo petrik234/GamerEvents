@@ -44,7 +44,7 @@ namespace GamerEvents
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             SetContentView(Resource.Layout.createEvent);
 
             
@@ -236,5 +236,7 @@ namespace GamerEvents
             this.StartActivity(intent);
             this.Finish();
         }
+        
+        
     }
 }
