@@ -58,21 +58,40 @@ namespace GamerEvents
 
           
 
-            events = Event.GetAll();
+            events = Event.GetAll().Where(x => x.startdate > DateTime.Now).ToArray();
 
-            foreach (Event item in events)
+            foreach (Event item in events )
             {
-                // itt minegyik elemnek létrehozol egy pontot item.lat, item.lon tulajdonságokban vannak az értékek
                 MarkerOptions markerOpt = new MarkerOptions();
                 markerOpt.SetPosition(new LatLng(item.lat, item.lon));
                 markerOpt.SetTitle(item.game);
-
+                markerOpt.SetSnippet(item.startdate.ToString("yyyy-MM-dd"));
+                markerOpt.Draggable(true);
+                map.MarkerDragStart += Map_MarkerDragStart;
                 map.AddMarker(markerOpt);
 
-                //most csak a példa kedvéért minden ciklusba belerakom az aktuális lat-ot a btnMain szövegébe azaz az uccsót fogja kiírni a képernyőre a main button szövegére
-                //btnMain.Text = item.lat.ToString();
             }
         }
+
+        private void Map_MarkerDragStart(object sender, GoogleMap.MarkerDragStartEventArgs e)
+        {
+            //Toast.MakeText(this, e.Marker.Id.Substring(1), ToastLength.Long).Show();
+
+            int.TryParse(e.Marker.Id.Substring(1), out int eventid);
+
+            SettingsManager sm = new SettingsManager();
+            
+            sm.WriteLocalFile("eventid", events[eventid].eventid.ToString());
+
+            Intent intent = new Intent(this, typeof(Map));
+            this.StartActivity(intent);
+            this.Finish();
+
+            intent = new Intent(this, typeof(DetailsEvent));
+            this.StartActivity(intent);
+            
+        }
+
 
         private void BtnMain_Click(object sender, EventArgs e)
         {

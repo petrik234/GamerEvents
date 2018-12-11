@@ -21,21 +21,34 @@
 				android:layout_width="fill_parent"
 				android:layout_height="150dp"
 		   />
-            <TextView
+		
+			<TextView
+				android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#333333"
                 android:text="Caption"
                 android:id="@+id/textViewCaption"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="4dp" />
 			<TextView
+				android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#333333"
+                android:text="Date"
+                android:id="@+id/textViewDate"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="4dp" /> />
+            
+			<TextView
+				android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#333333"
-                android:text="Caption"
+                android:text="Detail"
                 android:id="@+id/textViewDetails"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="4dp" />

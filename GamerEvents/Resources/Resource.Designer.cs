@@ -108,8 +108,11 @@ namespace GamerEvents
 		public partial class Array
 		{
 			
+			// aapt resource value: 0x7f0e0001
+			public const int gameimg_array = 2131623937;
+			
 			// aapt resource value: 0x7f0e0000
-			public const int planets_array = 2131623936;
+			public const int games_array = 2131623936;
 			
 			static Array()
 			{
@@ -2778,8 +2781,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00ef
 			public const int btnModify = 2131427567;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int btnPickPlace = 2131427490;
+			// aapt resource value: 0x7f0b00a0
+			public const int btnPickPlace = 2131427488;
 			
 			// aapt resource value: 0x7f0b009a
 			public const int btnProfile = 2131427482;
@@ -2787,8 +2790,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00ee
 			public const int btnSave = 2131427566;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int btnSubscribe = 2131427512;
+			// aapt resource value: 0x7f0b00b7
+			public const int btnSubscribe = 2131427511;
 			
 			// aapt resource value: 0x7f0b00bf
 			public const int buttonOk = 2131427519;
@@ -2796,11 +2799,11 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b006d
 			public const int buttonPanel = 2131427437;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int cEinputDescription = 2131427491;
+			// aapt resource value: 0x7f0b00a1
+			public const int cEinputDescription = 2131427489;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int cEnumber = 2131427492;
+			// aapt resource value: 0x7f0b00a2
+			public const int cEnumber = 2131427490;
 			
 			// aapt resource value: 0x7f0b00c8
 			public const int cancel_action = 2131427528;
@@ -2829,17 +2832,17 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0044
 			public const int collapseActionView = 2131427396;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int container = 2131427495;
+			// aapt resource value: 0x7f0b00a6
+			public const int container = 2131427494;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int contentPanel = 2131427440;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int coordinator = 2131427496;
+			// aapt resource value: 0x7f0b00a7
+			public const int coordinator = 2131427495;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int createEventsButton = 2131427485;
+			// aapt resource value: 0x7f0b00a3
+			public const int createEventsButton = 2131427491;
 			
 			// aapt resource value: 0x7f0b0077
 			public const int custom = 2131427447;
@@ -2850,8 +2853,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0028
 			public const int dark = 2131427368;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int dateDisplay = 2131427488;
+			// aapt resource value: 0x7f0b009e
+			public const int dateDisplay = 2131427486;
 			
 			// aapt resource value: 0x7f0b0084
 			public const int decor_content_parent = 2131427460;
@@ -2859,20 +2862,20 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b006a
 			public const int default_activity_button = 2131427434;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int design_bottom_sheet = 2131427498;
-			
-			// aapt resource value: 0x7f0b00b1
-			public const int design_menu_item_action_area = 2131427505;
+			// aapt resource value: 0x7f0b00a9
+			public const int design_bottom_sheet = 2131427497;
 			
 			// aapt resource value: 0x7f0b00b0
-			public const int design_menu_item_action_area_stub = 2131427504;
+			public const int design_menu_item_action_area = 2131427504;
 			
 			// aapt resource value: 0x7f0b00af
-			public const int design_menu_item_text = 2131427503;
+			public const int design_menu_item_action_area_stub = 2131427503;
 			
 			// aapt resource value: 0x7f0b00ae
-			public const int design_navigation_view = 2131427502;
+			public const int design_menu_item_text = 2131427502;
+			
+			// aapt resource value: 0x7f0b00ad
+			public const int design_navigation_view = 2131427501;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int disableHome = 2131427372;
@@ -2964,11 +2967,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0069
 			public const int image = 2131427433;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int imageButton1 = 2131427486;
-			
-			// aapt resource value: 0x7f0b00b9
-			public const int imageView = 2131427513;
+			// aapt resource value: 0x7f0b00b8
+			public const int imageView = 2131427512;
 			
 			// aapt resource value: 0x7f0b00d1
 			public const int info = 2131427537;
@@ -2979,8 +2979,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0000
 			public const int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int largeLabel = 2131427494;
+			// aapt resource value: 0x7f0b00a5
+			public const int largeLabel = 2131427493;
 			
 			// aapt resource value: 0x7f0b0053
 			public const int left = 2131427411;
@@ -3024,8 +3024,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0033
 			public const int multiply = 2131427379;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int navigation_header_container = 2131427501;
+			// aapt resource value: 0x7f0b00ac
+			public const int navigation_header_container = 2131427500;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int never = 2131427398;
@@ -3180,14 +3180,14 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00c0
 			public const int sign_in_button = 2131427520;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int smallLabel = 2131427493;
-			
-			// aapt resource value: 0x7f0b00ac
-			public const int snackbar_action = 2131427500;
+			// aapt resource value: 0x7f0b00a4
+			public const int smallLabel = 2131427492;
 			
 			// aapt resource value: 0x7f0b00ab
-			public const int snackbar_text = 2131427499;
+			public const int snackbar_action = 2131427499;
+			
+			// aapt resource value: 0x7f0b00aa
+			public const int snackbar_text = 2131427498;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int snap = 2131427406;
@@ -3195,8 +3195,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b006e
 			public const int spacer = 2131427438;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int spinner = 2131427487;
+			// aapt resource value: 0x7f0b009b
+			public const int spinner = 2131427483;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int split_action_bar = 2131427336;
@@ -3231,14 +3231,14 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0095
 			public const int tableLayout1 = 2131427477;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int tableLayout2 = 2131427483;
+			// aapt resource value: 0x7f0b009c
+			public const int tableLayout2 = 2131427484;
 			
 			// aapt resource value: 0x7f0b0096
 			public const int tableRow1 = 2131427478;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int tableRow2 = 2131427484;
+			// aapt resource value: 0x7f0b009d
+			public const int tableRow2 = 2131427485;
 			
 			// aapt resource value: 0x7f0b0019
 			public const int tag_transition_group = 2131427353;
@@ -3258,14 +3258,17 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0073
 			public const int textSpacerNoTitle = 2131427443;
 			
+			// aapt resource value: 0x7f0b00b9
+			public const int textViewCaption = 2131427513;
+			
 			// aapt resource value: 0x7f0b00ba
-			public const int textViewCaption = 2131427514;
+			public const int textViewDate = 2131427514;
 			
 			// aapt resource value: 0x7f0b00bb
 			public const int textViewDetails = 2131427515;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int text_input_password_toggle = 2131427506;
+			// aapt resource value: 0x7f0b00b1
+			public const int text_input_password_toggle = 2131427505;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int textinput_counter = 2131427348;
@@ -3276,8 +3279,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00cf
 			public const int time = 2131427535;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int timeDisplay = 2131427489;
+			// aapt resource value: 0x7f0b009f
+			public const int timeDisplay = 2131427487;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int title = 2131427356;
@@ -3294,8 +3297,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0078
 			public const int topPanel = 2131427448;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int touch_outside = 2131427497;
+			// aapt resource value: 0x7f0b00a8
+			public const int touch_outside = 2131427496;
 			
 			// aapt resource value: 0x7f0b00e9
 			public const int trPass = 2131427561;
@@ -3324,23 +3327,23 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00e5
 			public const int tvCity = 2131427557;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int tvDetails = 2131427510;
+			// aapt resource value: 0x7f0b00b5
+			public const int tvDetails = 2131427509;
 			
 			// aapt resource value: 0x7f0b00df
 			public const int tvEmail = 2131427551;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int tvGame = 2131427507;
+			// aapt resource value: 0x7f0b00b2
+			public const int tvGame = 2131427506;
 			
 			// aapt resource value: 0x7f0b00e7
 			public const int tvKonfig = 2131427559;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int tvLocation = 2131427509;
+			// aapt resource value: 0x7f0b00b4
+			public const int tvLocation = 2131427508;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int tvMaxMember = 2131427511;
+			// aapt resource value: 0x7f0b00b6
+			public const int tvMaxMember = 2131427510;
 			
 			// aapt resource value: 0x7f0b00e1
 			public const int tvName = 2131427553;
@@ -3348,8 +3351,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00ea
 			public const int tvPass = 2131427562;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int tvStartDate = 2131427508;
+			// aapt resource value: 0x7f0b00b3
+			public const int tvStartDate = 2131427507;
 			
 			// aapt resource value: 0x7f0b00bc
 			public const int txtGamerEvents = 2131427516;
@@ -3667,13 +3670,52 @@ namespace GamerEvents
 			public const int candycrush = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int ic_launcher = 2130903041;
+			public const int clashroyale = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ic_launcher_foreground = 2130903042;
+			public const int csgo = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_launcher_round = 2130903043;
+			public const int earth = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int ffxiv = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int fifa18 = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int fifa19 = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int gtav = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int Hearthstone = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int ic_launcher = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int ic_launcher_foreground = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int ic_launcher_round = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int lol = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int mw3 = 2130903053;
+			
+			// aapt resource value: 0x7f03000e
+			public const int Overwatch = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int pubg = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int splatoon2 = 2130903056;
 			
 			static Mipmap()
 			{

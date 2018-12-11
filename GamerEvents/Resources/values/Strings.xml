@@ -2,7 +2,7 @@
     <string name="app_name">GamerEvents</string>
     <string name="action_settings">Settings</string>
   <string name="game_prompt">Choose a planet</string>
-  <string-array name="planets_array">
+  <string-array name="games_array">
     <item>Candy Crush</item>
     <item>GTA V</item>
     <item>Earth</item>
@@ -12,14 +12,29 @@
     <item>FIFA 19</item>
     <item>pubg</item>
     <item>CS:GO</item>
-    <item>Fortnite</item>
+    
     <item>Splatoon 2</item>
     <item>Hearthstone</item>
     <item>Overwatch</item>
     <item>Final Fantasy XIV</item>
-    <item>FIFA 18</item>
-    
-    
-    
+    <item>FIFA 18</item>  
   </string-array>
+
+  <string-array name="gameimg_array">
+    <item>candycrush</item>
+    <item>gtav</item>
+    <item>earth</item>
+    <item>lol</item>
+    <item>mw3</item>
+    <item>clashroyale</item>
+    <item>fifa19</item>
+    <item>pubg</item>
+    <item>csgo</item>
+    <item>splatoon2</item>
+    <item>Hearthstone</item>
+    <item>Overwatch</item>
+    <item>ffxiv</item>
+    <item>fifa18</item>
+  </string-array>
+  
 </resources>

@@ -15,13 +15,14 @@ namespace GamerEvents.DBModel
         public int eventid { get; set; }
         public int ownerid { get; set; }
         //egyenlőre datetime helyett string lesz
-        public string startdate { get; set; }
+        public DateTime startdate { get; set; }
         public string location { get; set; }
         public string game { get; set; }
         public string details { get; set; }
         public int userlimit { get; set; }
         public double lon { get; set; }
         public double lat { get; set; }
+        public int imageid { get; set; }
 
 
 

@@ -54,10 +54,10 @@ namespace GamerEvents
             tvMaxMember = FindViewById<TextView>(Resource.Id.tvMaxMember);
 
             tvGame.Text = currentEvent.game;
-            tvStartDate.Text = currentEvent.startdate;
+            tvStartDate.Text = currentEvent.startdate.ToString("yyyy-MM-dd  HH:mm");
             tvLocation.Text = currentEvent.location;
             tvDetails.Text = currentEvent.details;
-            tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count() , currentEvent.userlimit.ToString());
+            tvMaxMember.Text = string.Format("{0} / {1}", (allSub is null) ? 0.ToString() : allSub.Where(x => x.eventid == currentEvent.eventid).Count().ToString() , currentEvent.userlimit.ToString());
 
             btnSubscribe = FindViewById<Button>(Resource.Id.btnSubscribe);
 
@@ -72,7 +72,15 @@ namespace GamerEvents
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
 
-            isCurrentUserSubscribed = (allSub.Where(x => x.userid == currentUser.userid && x.eventid == currentEvent.eventid).Count() == 0) ? false : true;
+            if (allSub is null)
+            {
+                isCurrentUserSubscribed = false;
+            }
+            else
+            {
+                isCurrentUserSubscribed = (allSub.Where(x => x.userid == currentUser.userid && x.eventid == currentEvent.eventid).Count() == 0 ) ? false : true;
+            }
+
             btnSubscribe.Text = (isCurrentUserSubscribed) ? "Leiratkozás" : "Feliratkozás";
 
         }
@@ -91,6 +99,15 @@ namespace GamerEvents
                     Toast.MakeText(this, "Sikeresen leiratkoztál!", ToastLength.Short).Show();
                     isCurrentUserSubscribed = false;
                     btnSubscribe.Text = "Feliratkozás";
+                    allSub = Subscribe.GetAll();
+                    if (allSub is null)
+                    {
+                        tvMaxMember.Text = "0 /" + currentEvent.userlimit.ToString();
+                    }
+                    else
+                    {
+                        tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count(), currentEvent.userlimit.ToString());
+                    }
                 }
                 else
                 {
@@ -100,11 +117,15 @@ namespace GamerEvents
             }
             else
             {
-                if (allSub.Where(x => x.eventid == currentEvent.eventid).Count() >= currentEvent.userlimit)
+                if (!(allSub is null))
                 {
-                    Toast.MakeText(this, "Az esemény jelenleg be van telve!", ToastLength.Short).Show();
-                    return;
+                    if (allSub.Where(x => x.eventid == currentEvent.eventid).Count() >= currentEvent.userlimit)
+                    {
+                        Toast.MakeText(this, "Az esemény jelenleg be van telve!", ToastLength.Short).Show();
+                        return;
+                    }
                 }
+                
                 // feliratkozunk
                 Subscribe subscribe = new Subscribe()
                 {
@@ -117,14 +138,15 @@ namespace GamerEvents
                     btnSubscribe.Text = "Leiratkozás";
                     isCurrentUserSubscribed = true;
                     Toast.MakeText(this, "Sikeresen feliratkoztál!", ToastLength.Short).Show();
+                    allSub = Subscribe.GetAll();
+                    tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count(), currentEvent.userlimit.ToString());
                 }
                 else
                 {
                     Toast.MakeText(this, "Nem sikerült feliratkozni!", ToastLength.Short).Show();
                 }
             }
-            allSub = Subscribe.GetAll();
-            tvMaxMember.Text = string.Format("{0} / {1}", allSub.Where(x => x.eventid == currentEvent.eventid).Count(), currentEvent.userlimit.ToString());
+            
         }
 
         private void BtnMain_Click(object sender, EventArgs e)

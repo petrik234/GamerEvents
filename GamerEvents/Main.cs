@@ -31,7 +31,8 @@ namespace GamerEvents
         {
             base.OnCreate(savedInstanceState);
 
-            events = Event.GetAll();
+            events = Event.GetAll().Where(x => x.startdate > DateTime.Now).OrderBy(x => x.startdate).ToArray();
+
 
             eventAdapter = new EventAdapter(events);
 

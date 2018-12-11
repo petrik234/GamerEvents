@@ -18,6 +18,7 @@ namespace GamerEvents
         public ImageView Image { get; private set; }
         public TextView Caption { get; private set; }
         public TextView Details { get; private set; }
+        public TextView Date { get; private set; }
 
         public EventViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
@@ -25,6 +26,7 @@ namespace GamerEvents
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             Caption = itemView.FindViewById<TextView>(Resource.Id.textViewCaption);
             Details = itemView.FindViewById<TextView>(Resource.Id.textViewDetails);
+            Date = itemView.FindViewById<TextView>(Resource.Id.textViewDate);
 
             itemView.Click += (sender, e) => listener(LayoutPosition);
         }

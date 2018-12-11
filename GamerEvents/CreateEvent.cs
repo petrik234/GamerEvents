@@ -83,7 +83,7 @@ namespace GamerEvents
 
             spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var adapter = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.games_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner.Adapter = adapter;
@@ -160,6 +160,14 @@ namespace GamerEvents
                 return;
             }
 
+            int.TryParse(createNumber.Text, out int limit);
+            if (limit < 1)
+            {
+                Toast.MakeText(this, "A limit 1 felett legyen!", ToastLength.Short).Show();
+                return;
+
+            }
+
             SettingsManager sm = new SettingsManager();
             string userid = sm.LoadLocalFile("userid");
             int uid = Convert.ToInt32(userid);
@@ -167,18 +175,32 @@ namespace GamerEvents
 
 
 
+            string[] gameNames = Resources.GetStringArray(Resource.Array.games_array);
+            string[] gameRes = Resources.GetStringArray(Resource.Array.gameimg_array);
+
+            int imgid = 0;
+
+            for (int i = 0; i < gameNames.Length; i++)
+            {
+                if (gameNames[i].ToLower() == selectedGame.ToLower())
+                {
+                    imgid = (int)typeof(Resource.Mipmap).GetField(gameRes[i].ToLower()).GetValue(null);
+                }
+            }
+
+
             Event formEvent = new Event
             {
                 ownerid = uid,
-                startdate = selectedDateTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                startdate = selectedDateTime,//.ToString("yyyy-MM-dd HH:mm:ss"),
                 location = selectedLocation,
                 game = selectedGame,
                 details = createDescription.Text,
                 userlimit = cNumber,
                 lat = selectedLat,
-                lon = selectedLon
+                lon = selectedLon,
+                imageid = imgid
             };
-
 
 
 
