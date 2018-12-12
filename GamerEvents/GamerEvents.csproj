@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
@@ -64,6 +65,10 @@
     <Compile Include="DetailsEvent.cs" />
     <Compile Include="EventAdapter.cs" />
     <Compile Include="EventViewHolder.cs" />
+    <Compile Include="FacebookAuthenticator.cs" />
+    <Compile Include="FacebookOAuthToken.cs" />
+    <Compile Include="FacebookService.cs" />
+    <Compile Include="IFacebookAuthenticationDelegate.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Map.cs" />

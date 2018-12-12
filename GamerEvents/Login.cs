@@ -22,17 +22,24 @@ using Android.Content;
 using System.Security.Cryptography;
 using System.Threading;
 using Xamarin.Auth;
+using Xamarin_FacebookAuth.Authentication;
+using Xamarin_FacebookAuth.Services;
+using System.Threading.Tasks;
 
 namespace GamerEvents
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class Login : AppCompatActivity, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
+    public class Login : AppCompatActivity, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener, IFacebookAuthenticationDelegate
     {
         private GoogleApiClient googleApiClient;
         private EditText etEmail;
         private EditText etPass;
         private Button btnOK;
         private SignInButton btnGoogleSignIn;
+
+        private FacebookAuthenticator _auth;
+        private string loggedEmail = "";
+        private string loggedName = "";
 
         private ConnectionResult connectionResult;
         private bool intentInProgress;
@@ -47,7 +54,12 @@ namespace GamerEvents
             SetContentView(Resource.Layout.login);
 
             //skip login
-            //GoToMainPage(1);
+            //GoToMainPage(1); 
+
+            _auth = new FacebookAuthenticator("306666026619877", "email", this);
+
+            var facebookLoginButton = FindViewById<Button>(Resource.Id.facebookLoginButton);
+            facebookLoginButton.Click += OnFacebookLoginButtonClicked;
 
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
             builder.AddConnectionCallbacks(this);
@@ -63,10 +75,37 @@ namespace GamerEvents
             btnOK = FindViewById<Button>(Resource.Id.buttonOk);
             btnGoogleSignIn = FindViewById<SignInButton>(Resource.Id.sign_in_button);
 
-
             btnOK.Click += BtnOK_Click;
             btnGoogleSignIn.Click += BtnGoogleSignIn_Click;
+        }
 
+        private void OnFacebookLoginButtonClicked(object sender, EventArgs e)
+        {
+            var authenticator = _auth.GetAuthenticator();
+            var intent = authenticator.GetUI(this);
+            StartActivity(intent);
+        }
+
+        public async void OnAuthenticationCompleted(FacebookOAuthToken token)
+        {
+            // Retrieve the user's email address
+            var facebookService = new FacebookService();
+            loggedEmail = await facebookService.GetEmailAsync(token.AccessToken);
+            loggedName = await facebookService.GetNameAsync(token.AccessToken);
+
+            // Display it on the UI
+            var facebookButton = FindViewById<Button>(Resource.Id.facebookLoginButton);
+            facebookButton.Text = $"Connected with {loggedEmail}";
+        }
+
+        public void OnAuthenticationCanceled()
+        {
+            new Android.App.AlertDialog.Builder(this).SetTitle("Authentication canceled").SetMessage("You didn't completed the authentication process").Show();
+        }
+
+        public void OnAuthenticationFailed(string message, Exception exception)
+        {
+            new Android.App.AlertDialog.Builder(this).SetTitle(message).SetMessage(exception?.ToString()).Show();
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
@@ -247,28 +286,6 @@ namespace GamerEvents
 
                 }
             }
-        }
-
-        public void FacebookLogin()
-        {
-            OAuth2Authenticator _auth;
-            _auth = new OAuth2Authenticator("306666026619877",
-                                "email",
-                                new Uri("https://www.facebook.com/dialog/oauth/"),
-                                new Uri("https://www.facebook.com/connect/login_success.html"));
-
-            _auth.Completed += OnAuthenticationCompleted;
-            _auth.Error += OnAuthenticationFailed;
-        }
-
-        private void OnAuthenticationCompleted(object sender, AuthenticatorCompletedEventArgs e)
-        {
-            
-        }
-
-        private void OnAuthenticationFailed(object sender, AuthenticatorErrorEventArgs e)
-        {
-            
         }
     }
 }
