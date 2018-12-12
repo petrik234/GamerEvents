@@ -21,6 +21,7 @@ using Android.Gms.Plus.Model.People;
 using Android.Content;
 using System.Security.Cryptography;
 using System.Threading;
+using Xamarin.Auth;
 
 namespace GamerEvents
 {
@@ -46,7 +47,7 @@ namespace GamerEvents
             SetContentView(Resource.Layout.login);
 
             //skip login
-            GoToMainPage(1);
+            //GoToMainPage(1);
 
             GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
             builder.AddConnectionCallbacks(this);
@@ -246,6 +247,28 @@ namespace GamerEvents
 
                 }
             }
+        }
+
+        public void FacebookLogin()
+        {
+            OAuth2Authenticator _auth;
+            _auth = new OAuth2Authenticator("306666026619877",
+                                "email",
+                                new Uri("https://www.facebook.com/dialog/oauth/"),
+                                new Uri("https://www.facebook.com/connect/login_success.html"));
+
+            _auth.Completed += OnAuthenticationCompleted;
+            _auth.Error += OnAuthenticationFailed;
+        }
+
+        private void OnAuthenticationCompleted(object sender, AuthenticatorCompletedEventArgs e)
+        {
+            
+        }
+
+        private void OnAuthenticationFailed(object sender, AuthenticatorErrorEventArgs e)
+        {
+            
         }
     }
 }
