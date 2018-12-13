@@ -24,6 +24,18 @@ namespace GamerEvents
             File.WriteAllText(filePath, Data);
         }
 
+        public void DeleteLocalFile(string FileName)
+        {
+            string filePath = Path.Combine(PersonalFolderPath, FileName);
+            try
+            {
+                File.Delete(filePath);
+            }
+            catch
+            { }
+            
+        }
+
         // Load Information from a Local File
         public string LoadLocalFile(string FileName)
         {

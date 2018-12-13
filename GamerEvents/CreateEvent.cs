@@ -184,7 +184,7 @@ namespace GamerEvents
             {
                 if (gameNames[i].ToLower() == selectedGame.ToLower())
                 {
-                    imgid = (int)typeof(Resource.Mipmap).GetField(gameRes[i].ToLower()).GetValue(null);
+                    imgid = (int)typeof(Resource.Mipmap).GetField(gameRes[i]).GetValue(null);
                 }
             }
 

@@ -25,6 +25,7 @@ namespace GamerEvents
         Button btnCreate;
         Button btnSave;
         Button btnModify;
+        Button btnLogout;
 
         TextView etEmail;
         TextView etName;
@@ -73,6 +74,7 @@ namespace GamerEvents
             etCity.Enabled = false;
             etConfig.Enabled = false;
 
+            btnLogout = FindViewById<Button>(Resource.Id.btnLogout);
             btnSave = FindViewById<Button>(Resource.Id.btnSave);
             btnModify = FindViewById<Button>(Resource.Id.btnModify);
 
@@ -83,11 +85,22 @@ namespace GamerEvents
 
             btnSave.Click += BtnSave_Click;
             btnModify.Click += BtnModify_Click;
+            btnLogout.Click += BtnLogout_Click;
 
             btnMain.Click += BtnMain_Click;
             btnProfile.Click += BtnProfile_Click;
             btnMap.Click += BtnMap_Click;
             btnCreate.Click += BtnCreate_Click;
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+
+            SettingsManager sm = new SettingsManager();
+            sm.DeleteLocalFile("userid");
+            Intent intent = new Intent(this, typeof(Login));
+            this.StartActivity(intent);
+            this.Finish();
         }
 
         private void BtnModify_Click(object sender, EventArgs e)

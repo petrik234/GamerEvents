@@ -25,6 +25,7 @@ using Xamarin.Auth;
 using Xamarin_FacebookAuth.Authentication;
 using Xamarin_FacebookAuth.Services;
 using System.Threading.Tasks;
+using System.Net.Mail;
 
 namespace GamerEvents
 {
@@ -93,9 +94,44 @@ namespace GamerEvents
             loggedEmail = await facebookService.GetEmailAsync(token.AccessToken);
             loggedName = await facebookService.GetNameAsync(token.AccessToken);
 
-            // Display it on the UI
-            var facebookButton = FindViewById<Button>(Resource.Id.facebookLoginButton);
-            facebookButton.Text = $"Connected with {loggedEmail}";
+            User formUser = new User
+            {
+                email = loggedEmail,
+                password = ""
+            };
+
+            User userResult = User.GetByEmail(formUser.email);
+            if (userResult != null)
+            {
+                GoToMainPage(userResult.userid);
+            }
+            else
+            {
+                if (User.CreateNew(formUser))
+                {
+                    Toast.MakeText(this, "Sikeres facebook bejelentkezés", ToastLength.Long).Show();
+                    //regisztrált
+                    //lekérjük az idjét
+                    User loggedUser = User.GetByEmail(formUser.email);
+                    Handler h = new Handler();
+                    Action myAction = () =>
+                    {
+                        GoToMainPage(loggedUser.userid);
+                    };
+
+                    h.PostDelayed(myAction, 2000);
+
+                }
+                else
+                {
+                    //sikertelen regisztráció
+                    Toast.MakeText(this, "Sikertelen facebook bejelentkezés", ToastLength.Short).Show();
+                }
+            }
+
+                // Display it on the UI
+                /*var facebookButton = FindViewById<Button>(Resource.Id.facebookLoginButton);
+                facebookButton.Text = $"Connected with {loggedEmail}";*/
         }
 
         public void OnAuthenticationCanceled()
@@ -110,9 +146,19 @@ namespace GamerEvents
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            if (etEmail.Text == string.Empty || etPass.Text == string.Empty)
+            try
             {
-                //hibakezelés
+                MailAddress m = new MailAddress(etEmail.Text);
+            }
+            catch (FormatException)
+            {
+                Toast.MakeText(this, "Helytelen email formátum", ToastLength.Long).Show();
+                return;
+            }
+
+            if ( etPass.Text.Length < 6)
+            {
+                Toast.MakeText(this, "A jelszó 6 karekter vagy\nannál hosszabb legyen!", ToastLength.Long).Show();
                 return;
             }
 
@@ -123,7 +169,7 @@ namespace GamerEvents
             };
 
             User userResult = User.GetByEmail(formUser.email);
-            if (userResult.email != null)
+            if (userResult != null)
             {
                 byte[] encodedPassword = new UTF8Encoding().GetBytes(etPass.Text);
 

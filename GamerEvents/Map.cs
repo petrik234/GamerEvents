@@ -83,13 +83,14 @@ namespace GamerEvents
             
             sm.WriteLocalFile("eventid", events[eventid].eventid.ToString());
 
-            Intent intent = new Intent(this, typeof(Map));
+            /*Intent intent = new Intent(this, typeof(Map));
+            this.StartActivity(intent);
+            this.Finish();*/
+
+            Intent intent = new Intent(this, typeof(DetailsEvent));
             this.StartActivity(intent);
             this.Finish();
 
-            intent = new Intent(this, typeof(DetailsEvent));
-            this.StartActivity(intent);
-            
         }
 
 

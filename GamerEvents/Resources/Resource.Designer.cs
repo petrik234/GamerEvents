@@ -2907,14 +2907,17 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0099
 			public const int btnCreate = 2131427481;
 			
+			// aapt resource value: 0x7f0b00f0
+			public const int btnLogout = 2131427568;
+			
 			// aapt resource value: 0x7f0b0098
 			public const int btnMain = 2131427480;
 			
 			// aapt resource value: 0x7f0b009a
 			public const int btnMap = 2131427482;
 			
-			// aapt resource value: 0x7f0b00f1
-			public const int btnModify = 2131427569;
+			// aapt resource value: 0x7f0b00f2
+			public const int btnModify = 2131427570;
 			
 			// aapt resource value: 0x7f0b00a1
 			public const int btnPickPlace = 2131427489;
@@ -2922,8 +2925,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b009b
 			public const int btnProfile = 2131427483;
 			
-			// aapt resource value: 0x7f0b00f0
-			public const int btnSave = 2131427568;
+			// aapt resource value: 0x7f0b00f1
+			public const int btnSave = 2131427569;
 			
 			// aapt resource value: 0x7f0b00b8
 			public const int btnSubscribe = 2131427512;
@@ -3144,14 +3147,14 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b00c5
 			public const int map2 = 2131427525;
 			
-			// aapt resource value: 0x7f0b00f4
-			public const int masked = 2131427572;
+			// aapt resource value: 0x7f0b00f5
+			public const int masked = 2131427573;
 			
 			// aapt resource value: 0x7f0b00cc
 			public const int media_actions = 2131427532;
 			
-			// aapt resource value: 0x7f0b00f2
-			public const int message = 2131427570;
+			// aapt resource value: 0x7f0b00f3
+			public const int message = 2131427571;
 			
 			// aapt resource value: 0x7f0b003c
 			public const int middle = 2131427388;
@@ -3507,8 +3510,8 @@ namespace GamerEvents
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00f3
-			public const int visible = 2131427571;
+			// aapt resource value: 0x7f0b00f4
+			public const int visible = 2131427572;
 			
 			// aapt resource value: 0x7f0b0095
 			public const int webview = 2131427477;
