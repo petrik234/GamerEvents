@@ -147,6 +147,12 @@ namespace GamerEvents
                 error = true;
                 Toast.MakeText(this, "Ez az email már foglalt", ToastLength.Long).Show();
             }
+            if (etPass.Text.Length < 6)
+            {
+                Toast.MakeText(this, "A jelszó 6 karekter vagy\nannál hosszabb legyen!", ToastLength.Long).Show();
+                error = true;
+            }
+
             if (etPass.Text != etPass2.Text)
             {
                 error = true;
